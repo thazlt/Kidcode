@@ -1,0 +1,374 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+h1, h2, h3, h4, a {
+  font-family: 'Baloo Bhai', cursive;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+body {
+  color: #5a5a5a;
+  width: 100%;
+  /* min-height: 100%; */
+
+}
+table.table {
+    margin-top: 55px;
+}
+/* .collapse {
+  display: inline-block !important;
+} */
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(250, 207, 15, 0.5);
+}
+
+.nav-link{
+  font-size: 24px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: rgb(238, 108, 75);
+}
+
+a#navbarDropdownMenuLink {
+  color: #51c5d6;
+  text-align: center;
+}
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+.container-fluid{
+  max-width: 100%;
+}
+
+
+.col-lg-4 {
+  text-align: center;
+  padding: 20px 30px 20px 30px;
+}
+
+.col-lg-4 h2 {
+  padding-top: 20px;
+}
+
+.card-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.card{
+  padding: 0;
+  display: block;
+  width: 60%;
+  height: 50vh;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.card:hover{
+  box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+}
+
+.jumbotron{
+  background-color: #aecc51;
+  padding: 15px 15px 15px 15px;
+}
+
+.promo{
+  display: flex;
+  align-items: center;
+}
+
+.img-fluid{
+  margin-right: 0px;
+}
+
+.promo-text h2{
+  color: white;
+  font-size: 65px;
+  text-shadow: 1px 1px gray;
+}
+
+.promo-text p{
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px gray;
+  font-weight: bold;
+}
+
+.info-block{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.info-block li{
+  list-style: none;
+}
+
+.info-block li a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #5a5a5a;
+}
+
+.feedback{
+  margin: 20px 0;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.feedback img{
+  border-radius: 50%;
+}
+
+.feedback .col-lg-3{
+  padding: 0;
+}
+
+footer{
+  width: 100%;
+  margin: 0px;
+
+}
+
+footer p{
+  margin-top: 0;
+    margin-bottom: 0;
+}
+
+#cpr {
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0px !important;
+}
+
+#cpr p a{
+  color: rgba(250, 207, 15);
+}
+
+.course-box{
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+
+.course-head{
+  background-color: #5a5a5a;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 10px;
+}
+
+.course-head h2{
+  margin-bottom: 0;
+}
+
+.course-content{
+  display: grid;
+  grid-template-columns: auto auto;
+  /* grid-gap: 0px; */
+}
+
+.course-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.course-info p{
+  font-size: 16px;
+  margin-right: 25px;
+}
+
+.course-img{
+  width: 150px;
+  height: 150px;
+  margin: 25px;
+}
+.dropdown, .dropup{
+  right: 0px;
+}
+
+@media only screen and (min-width: 768px){
+  .card-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .info-block{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 0;
+  }
+  .dropdown, .dropup{
+    right: 15px;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .card-container{
+    width: 75%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .info-block{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+ul.navbar-nav.mx-auto {
+    text-align: center;}
+
+    body{
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .header {
+      margin-top: 50px;
+      padding: 50px 50px;
+      background-color: darkslategrey;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .origin-text{
+      margin-top: 20px;
+      padding: 20px 20px;
+      border-radius: 10px;
+      background-color: rgb(238, 108, 75);
+      color: white;
+    }
+
+    .text {
+      margin: 0;
+    }
+
+    .timer-wrapper{
+      background-color: orange;
+      padding: 5px;
+      letter-spacing: 2px;
+      align-content: center;
+      border-radius: 10px;
+    }
+
+    .timer{
+      font-size: 3em;
+      font-weight: bold;
+      color: white;
+      margin-left: 6px;
+
+    }
+
+    .btn-primary{
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    .text-wrapper{
+      margin: 20px;
+      border: 10px solid orange;
+      border-radius: 10px;
+    }
+
+    #textArea{
+      width: 100%;
+    }
+    .text{
+      font-size: 25px;
+    }
+    /* Profile page */
+
+    .profile-container {
+      padding: 50px 50px 50px 50px;
+    }
+    .profile-info {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .profile-info .profile-info-content {
+      padding: 20px;
+      height: 300px;
+    }
+
+    .profile-info .profile-info-content img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .profile-info .profile-info-content h3 {
+      text-align: center;
+    }
+
+    .avatar {
+      object-fit: cover;
+      width: 160px;
+      height: 160px;
+      border-radius: 100px;
+    }
+
+    .learning-content {
+      background-color: #f1f1f1;
+      display: grid;
+      grid-gap: 10px;
+      padding: 30px 70px;
+      line-height: 30px;
+      justify-items: center;
+    }
+
+    .learning-content p {
+      font-size: 40px;
+    }
+
+    .my-progress {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      padding: 30px 50px;
+      height: 612px;
+      overflow: auto;
+    }
+
+    .my-progress p {
+      background-color: #58585a;
+      color: white;
+      display: inline;
+      letter-spacing: .1em;
+      padding: 2px 10px;
+      border-radius: 15px;
+      left: 25%;
+      margin: auto;
+      position: absolute;
+      right: 25%;
+      text-align: center;
+      top: 10%;
+    }

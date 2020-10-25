@@ -14,7 +14,7 @@ public function index(Request $rq){
   if(!session()->get('loggedin'))
   {
     echo "<script type='text/javascript'>alert('You are not logged in!!! Login or Register a new account to enter a lesson');</script>";
-    $this->view("pages/index", $this->data);
+    return view('pages/index')->with('data',$this->data);
   }
   else{
     $this->lessonModel = new Lesson;

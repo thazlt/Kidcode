@@ -1,5 +1,5 @@
 <?php
-include APPROOT . '/views/inc/header.php';
+include APPROOT . '/resources/views/inc/header.blade.php';
  ?>
 
     <div class="container">
@@ -37,8 +37,11 @@ include APPROOT . '/views/inc/header.php';
               </div>
               <div class="col-lg-6">
                 <button id="reset" class="btn btn-primary button">Try Again</button>
-                <form style="float: left;margin-right: 10px;" class="" action="<?php echo URLROOT ?> lessons/exercisesubmit/<?php echo $data['LessonID'] ?>/<?php echo $data['ExerciseID'] ?>" method="post">
+                <form style="float: left;margin-right: 10px;" class="" action="<?php echo URLROOT ?>lessons/exercisesubmit" method="get">
+                  <?php echo Form::token();?>
                   <button class="btn btn-primary button" type="" name="button">DONE!!!!!</button>
+                  <input type="hidden" name="lessonID" value="<?php echo $data['LessonID']; ?>">
+                  <input type="hidden" name="exerciseID" value="<?php echo $data['ExerciseID']; ?>">
                   <input type="hidden" name="time" value="" id="input-time">
                   <input type="hidden" name="error" value="" id="input-error">
                 </form>
@@ -50,5 +53,5 @@ include APPROOT . '/views/inc/header.php';
     </div>
   </div>
 <?php
-include APPROOT . '/views/inc/footer.php';
+include APPROOT . '/resources/views/inc/footer.blade.php';
 ?>

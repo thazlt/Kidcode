@@ -38,10 +38,10 @@
             </ul>
             <!--log in-->
             <?php
-            if(Session::get('loggedin') == false) {
-              include APPROOT . "/resources/views/inc/loggedout.php";
+            if(session()->get('loggedin') == false) {
+              include APPROOT . "/resources/views/inc/loggedout.blade.php";
             } else {
-              include APPROOT . "/resources/views/inc/loggedin.php";
+              include APPROOT . "/resources/views/inc/loggedin.blade.php";
             }
              ?>
         </div>

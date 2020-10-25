@@ -1,5 +1,6 @@
 <?php
-include APPROOT . '/views/inc/header.php';
+//var_dump($data);
+include APPROOT . '/resources/views/inc/header.blade.php';
  ?>
  <div class="container" id="intro">
    <div class="row justify-content-center" style="background-color: <?php echo $data['headcolor'] ?>;">
@@ -24,7 +25,7 @@ include APPROOT . '/views/inc/header.php';
          <tbody>
            <?php foreach ($data['Exercise'] as $key): ?>
                <tr>
-                 <th scope="row"><a href = "<?php echo URLROOT . "lessons/exercise/" . $data['Lesson']['LessonID'] . "/" . $key['ExerciseID'] ?>"><?php echo $key['ExerciseID']. "/&nbsp&nbsp&nbsp&nbsp" . $key['ExerciseName'] ?></a></th>
+                 <th scope="row"><a href = "<?php echo URLROOT . "lessons/exercise?lessonID=" . $data['Lesson']['LessonID'] . "&exerciseID=" . $key['ExerciseID'] ?>"><?php echo $key['ExerciseID']. "/&nbsp&nbsp&nbsp&nbsp" . $key['ExerciseName'] ?></a></th>
                  <td>
                    <div class="progress">
                      <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -59,5 +60,5 @@ include APPROOT . '/views/inc/header.php';
    </div>
  </div>
 <?php
-include APPROOT . '/views/inc/footer.php';
+include APPROOT . '/resources/views/inc/footer.blade.php';
 ?>

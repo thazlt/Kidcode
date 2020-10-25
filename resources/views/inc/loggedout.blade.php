@@ -20,7 +20,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="" action="<?php echo URLROOT; ?>pages/register" method="post">
+                        <form class="" action="<?php echo URLROOT; ?>page/register" method="post">
+                          <?php echo Form::token();?>
                             <div class="form-group">
                                 <label for="uname">User Name</label>
                                 <input type="text" class="form-control uname" name="username"  placeholder="Enter your Username">
@@ -57,7 +58,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="" action="<?php echo URLROOT; ?>pages/login" method="post">
+                        <form class="" action="<?php echo URLROOT; ?>page/login" method="post">
+                          <?php echo Form::token();?>
                             <div class="form-group">
                                 <label for="Username">Username</label>
                                 <input name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

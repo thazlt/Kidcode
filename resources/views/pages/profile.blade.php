@@ -1,4 +1,4 @@
-<?php include APPROOT.'/views/inc/header.php';?>
+<?php include APPROOT.'/resources/views/inc/header.blade.php';?>
 <div class="profile" style="background-color:#a8ce50cc;">
   <div class="profile-container">
     <div class="row">
@@ -6,7 +6,7 @@
         <div class="profile-info">
           <div class="profile-info-content">
             <h3><?php echo $data['user']['USERNAME'] ?></h3>
-            <img class="avatar" src="<?php echo URLROOT ?>img/defaultava.png" alt="avatar">
+            <img class="avatar" src="<?php echo URLROOT ?>/resources/img/defaultava.png" alt="avatar">
             <h3><?php echo $data['user']['EMAIL'] ?></h3>
           </div>
         </div>
@@ -54,4 +54,4 @@
 </div>
 
 
-<?php include APPROOT.'/views/inc/footer.php'; ?>
+<?php include APPROOT.'/resources/views/inc/footer.blade.php'; ?>

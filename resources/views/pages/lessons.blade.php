@@ -1,8 +1,8 @@
 <?php
-include APPROOT . "/resources/views/inc/header.php";
- ?>
+include APPROOT . "/resources/views/inc/header.blade.php";
 
-    <!-- Info -->
+ ?>
+   <!-- Info -->
     <div class="container-fluid">
       <div class="course-box" style="background-color: #51c5d6;">
         <div class="course-head">
@@ -10,7 +10,7 @@ include APPROOT . "/resources/views/inc/header.php";
         </div>
         <div class="course-content">
           <div>
-            <img src="<?php echo URLROOT ?>/img/beginner.png" class="img-fluid course-img">
+            <img src="<?php echo URLROOT ?>/resources/img/beginner.png" class="img-fluid course-img">
           </div>
           <div class="course-info">
             <div>
@@ -18,7 +18,7 @@ include APPROOT . "/resources/views/inc/header.php";
               </p>
             </div>
             <div>
-              <a href="<?php if($_SESSION['loggedin'])echo URLROOT . "lessons/index/0"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
+              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=0"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
             </div>
           </div>
 
@@ -31,7 +31,7 @@ include APPROOT . "/resources/views/inc/header.php";
         </div>
         <div class="course-content">
           <div>
-            <img src="<?php echo URLROOT ?>/img/inter.png" class="img-fluid course-img">
+            <img src="<?php echo URLROOT ?>/resources/img/inter.png" class="img-fluid course-img">
           </div>
           <div class="course-info">
             <div>
@@ -39,7 +39,7 @@ include APPROOT . "/resources/views/inc/header.php";
               </p>
             </div>
             <div>
-              <a href="<?php if($_SESSION['loggedin'])echo URLROOT . "lessons/index/1"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
+              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=1"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ include APPROOT . "/resources/views/inc/header.php";
         </div>
         <div class="course-content">
           <div>
-            <img src="<?php echo URLROOT ?>/img/advanced.png" class="img-fluid course-img">
+            <img src="<?php echo URLROOT ?>/resources/img/advanced.png" class="img-fluid course-img">
           </div>
           <div class="course-info">
             <div>
@@ -59,7 +59,7 @@ include APPROOT . "/resources/views/inc/header.php";
               </p>
             </div>
             <div>
-              <a href="<?php if($_SESSION['loggedin'])echo URLROOT . "lessons/index/2"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
+              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=2"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
             </div>
           </div>
         </div>
@@ -72,6 +72,6 @@ include APPROOT . "/resources/views/inc/header.php";
     </script>
     <!-- Footer -->
 
-    <?php
-    include APPROOT . "/resources/views/inc/footer.php";
-     ?>
+<?php
+    include APPROOT . "/resources/views/inc/footer.blade.php";
+    ?>

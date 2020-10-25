@@ -1,5 +1,5 @@
 <?php
-include APPROOT . "/resources/views/inc/header.php";
+include APPROOT . "/resources/views/inc/header.blade.php";
  ?>
 
  <!-- Banner -->
@@ -108,5 +108,5 @@ include APPROOT . "/resources/views/inc/header.php";
  <!-- Footer -->
 
 <?php
-include APPROOT . "/resources/views/inc/footer.php";
+include APPROOT . "/resources/views/inc/footer.blade.php";
  ?>

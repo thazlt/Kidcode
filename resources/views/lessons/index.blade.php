@@ -59,6 +59,10 @@ include APPROOT . '/resources/views/inc/header.blade.php';
      </div>
    </div>
  </div>
+ <div class= "container" id= "comment">
+   <h3>Comment:</h3>
+   
+ </div>
 <?php
 include APPROOT . '/resources/views/inc/footer.blade.php';
 ?>

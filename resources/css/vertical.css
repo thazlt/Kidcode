@@ -9,7 +9,7 @@
   justify-content: center;
 }
 .banner h1{
-   color: #5a5a5a;
+   color: #ffffff;
    font-size: 40px;
 }
 
@@ -26,6 +26,7 @@
 
 .team-member img{
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .contact-block{

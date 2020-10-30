@@ -48,27 +48,27 @@ include APPROOT . "/resources/views/inc/header.blade.php";
                 <h4>Front-end team:</h4>
                 <div class="team-member">
                   <div class="">
-                    <img src="<?php echo URLROOT; ?>/resources/img/member1.jpg" width="200px" height="200px">
-                    <h4>Nguyen Thi Thuy Linh</h4>
-                    <p>1759021</p>
+                    <img src="<?php echo URLROOT; ?>/resources/img/di.jpg" width="200px" height="200px" style="object-fit: cover;">
+                    <h4>Nguyen Vo Thanh Vy</h4>
+                    <p>1859050</p>
                   </div>
                   <div class="">
-                    <img src="<?php echo URLROOT; ?>/resources/img/ava1.jpg"  width="200px" height="200px">
-                    <h4>Le Nhu</h4>
-                    <p>1459039</p>
+                    <img src="<?php echo URLROOT; ?>/resources/img/ava.png"  width="200px" height="200px" style="object-fit: cover;">
+                    <h4>Nguyen Tien Thien Thanh</h4>
+                    <p>1859046</p>
                   </div>
                 </div>
               <h4>Back-end team:</h4>
               <div class="team-member">
                 <div class="">
-                  <img src="<?php echo URLROOT; ?>/resources/img/thaz.jpg" width="200px" height="200px">
+                  <img src="<?php echo URLROOT; ?>/resources/img/ava.png" width="200px" height="200px" style="object-fit: cover;">
                   <h4>Lai Thien Thach</h4>
                   <p>1859044</p>
                 </div>
                 <div class="">
-                  <img src="<?php echo URLROOT; ?>/resources/img/di.jpg"  width="200px" height="200px">
-                  <h4>Nguyen Vo Thanh Vy</h4>
-                  <p>1859050</p>
+                  <img src="<?php echo URLROOT; ?>/resources/img/ava.png"  width="200px" height="200px" style="object-fit: cover;">
+                  <h4>Huynh Xuan Tin</h4>
+                  <p>1759039</p>
                 </div>
               </div>
           </div>

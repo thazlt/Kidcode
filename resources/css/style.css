@@ -372,3 +372,6 @@ ul.navbar-nav.mx-auto {
       text-align: center;
       top: 10%;
     }
+.team-member img {
+  object-fit: cover;
+}

@@ -30,4 +30,5 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('lessons/index/', [LessonsController::class, 'index']);
   Route::get('lessons/exercise/', [LessonsController::class, 'exercise']);
   Route::get('lessons/exercisesubmit/', [LessonsController::class, 'exercisesubmit']);
+  Route::get('lessons/quiz/', [LessonsController::class, 'quiz']);
 });

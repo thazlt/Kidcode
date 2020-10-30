@@ -44,7 +44,7 @@ public function  exercisesubmit(Request $rq){
   if(!session()->get('loggedin'))
   {
     echo "<script type='text/javascript'>alert('You are not logged in!!! Login or Register a new account to enter a lesson');</script>";
-    $this->view("pages/index", $this->data);
+    return view('pages/index')->with('data',$this->data);
   }
   else{
     $LessonID = $rq->get('lessonID');
@@ -55,6 +55,9 @@ public function  exercisesubmit(Request $rq){
     $this->lessonModel = new Lesson;
     $this->lessonModel->submitExercise($Uname, $LessonID, $ExerciseID, $error, $time);
     return redirect()->to(URLROOT . "lessons/index?lessonID=" . $LessonID);
+    }
   }
-}
+  public function quiz(Request $rq){
+    return view('lessons/quiz')->with('data',$this->data);
+  }
 }

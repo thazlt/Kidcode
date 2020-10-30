@@ -41,7 +41,7 @@ include APPROOT . "/resources/views/inc/header.blade.php";
             </div>
             <div>
               <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=1"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
-                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=0"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
+                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=1"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ include APPROOT . "/resources/views/inc/header.blade.php";
             </div>
             <div>
               <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=2"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
-                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=0"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
+                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=2"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
             </div>
           </div>
         </div>

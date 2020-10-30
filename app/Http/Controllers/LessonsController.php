@@ -58,6 +58,9 @@ public function  exercisesubmit(Request $rq){
     }
   }
   public function quiz(Request $rq){
+    $this->lessonModel = new Lesson;
+    $this->data = $this->lessonModel->getQuizzes($rq->get('lessonID'));
+    //var_dump($rq->get('lessonID'));
     return view('lessons/quiz')->with('data',$this->data);
   }
 }

@@ -1,30 +1,10 @@
 <script>
     const quiz = [
-{
-    q:'This is question 1 ?',
-    option:['Answer A','Answer B','Answer C','Answer D'],
-    answer:2
-},
-{
-    q:'This is question 2 ?',
-    option:['Answer A','Answer B','Answer C','Answer D'],
-    answer:2
-},
-{
-    q:'This is question 3 ?',
-    option:['Answer A','Answer B','Answer C','Answer D'],
-    answer:3
-},
-{
-    q:'This is question 4 ?',
-    option:['Answer A','Answer B','Answer C','Answer D'],
-    answer:3
-},
-{
-    q:'This is question 5 ?',
-    option:['Answer A','Answer B','Answer C','Answer D'],
-    answer:3
-}
+      <?php foreach ($data as $ques) {
+        echo "{q:'" . $ques['Question'] . "',";
+        echo "option:['" . $ques['Ans1'] . "','" . $ques['Ans2'] . "','" . $ques['Ans3'] . "','" . $ques['Ans4'] . "'],";
+        echo "answer:" . $ques['Correct_Ans'] . "},";
+      } ?>
 ]
 </script>
 

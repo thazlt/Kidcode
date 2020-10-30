@@ -483,11 +483,9 @@ ul.navbar-nav.mx-auto {
         z-index: -1;
         animation: slideInLeft .5s ease forwards
     }
-<<<<<<< HEAD
 .team-member img {
   object-fit: cover;
-=======
-
+}
     @keyframes slideInLeft {
         0%{
             transform: translateX(-100%);
@@ -586,7 +584,7 @@ ul.navbar-nav.mx-auto {
     .quiz_btn{
         font-weight: 600;
     }
-    .container-quiz {
+.container-quiz {
     min-height: 90%;
     background-color:#7bcedc;
     margin: 0;
@@ -595,7 +593,5 @@ ul.navbar-nav.mx-auto {
     font-weight: 400;
     box-sizing: border-box;
     padding: 40px 0px;
-    /* padding: 0; */
     outline: none;
->>>>>>> 6bf7ab75bf4d0b3e16b365de1613534a7232ca92
 }

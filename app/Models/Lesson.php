@@ -46,4 +46,10 @@ class Lesson extends Model
         $this->dbh->run($sql, 'siiis', $params);
     }
   }
+  public function getQuizzes($LessonID){
+    $sql = "SELECT QuesNum, Question, Ans1, Ans2, Ans3, Ans4, Correct_Ans FROM quiz q join quiz_questions qq on q.QuizID = qq.QuizID WHERE LessonID = ?";
+    $params = [$LessonID];
+    $this->dbh->run($sql, 'i', $params);
+    return $this->dbh->resultSet();
+  }
 }

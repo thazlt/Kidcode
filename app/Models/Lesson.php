@@ -52,4 +52,48 @@ class Lesson extends Model
     $this->dbh->run($sql, 'i', $params);
     return $this->dbh->resultSet();
   }
+  public function getComments($LessonID){
+    $sql = "SELECT * FROM comment
+    WHERE parent_cmt_id = '0' AND LessonID = ?
+    ORDER BY comment_id DESC
+    ";
+    $this->dbh->run($sql, "i", $params=[$LessonID]);
+    $result = $this->dbh->resultSet();
+    return $result;
+  }
+  public function getReplyComments($parent_id = 0, $marginleft = 0){
+    $sql = "SELECT * FROM comment WHERE parent_cmt_id = '".$parent_id."'";
+    $this->dbh->run($sql, "", $params=[]);
+    $result = $this->dbh->resultSet();
+    $count = count($result);
+    $output = '';
+    if($parent_id == 0)
+    {
+     $marginleft = 0;
+    }
+    else
+    {
+     $marginleft = $marginleft + 48;
+    }
+    if($count > 0)
+    {
+     foreach($result as $row)
+     {
+      $output .= '
+      <div class="panel panel-default" style="margin-left:'.$marginleft.'px">
+       <div class="panel-heading">By <b>'.$row["comment_sender_name"].'</b> on <i>'.$row["date"].'</i></div>
+       <div class="panel-body">'.$row["comment"].'</div>
+       <div class="panel-footer" align="right"><button type="button" class="btn2 btn-default reply" id="'.$row["comment_id"].'">Reply</button></div>
+      </div>
+      ';
+      $output .= $this->getReplyComments($row["comment_id"], $marginleft);
+     }
+    }
+    return $output;
+  }
+  public function addComment($parent_cmt_id, $comment, $comment_sender_name, $LessonID){
+    $sql = "INSERT INTO comment (parent_cmt_id,comment,comment_sender_name, LessonID)
+    VALUES (?,?,?,?)";
+    $this->dbh->run($sql, "issi", $params=[$parent_cmt_id, $comment, $comment_sender_name, $LessonID]);
+  }
 }

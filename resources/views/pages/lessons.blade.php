@@ -74,7 +74,6 @@ include APPROOT . "/resources/views/inc/header.blade.php";
     })
     </script>
     <!-- Footer -->
-
 <?php
     include APPROOT . "/resources/views/inc/footer.blade.php";
     ?>

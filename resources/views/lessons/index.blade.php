@@ -1,5 +1,4 @@
 <?php
-//var_dump($data);
 include APPROOT . '/resources/views/inc/header.blade.php';
  ?>
  <div class="container" id="intro">
@@ -61,8 +60,137 @@ include APPROOT . '/resources/views/inc/header.blade.php';
  </div>
  <div class= "container" id= "comment">
    <h3>Comment:</h3>
-   
+   <form class="" action="" method="POST" id="comment_form">
+  <?php echo Form::token();?>
+     <div class="form-group">
+
+       <input type="text" class="form-control" name="comment_name" id="comment_name" placeholder="Enter name">
+
+     </div>
+
+     <div class="form-group">
+
+      <textarea name="comment_content" rows="5" id="comment_content" class="form-control" placeholder="Enter comment"></textarea>
+
+     </div>
+
+     <div class="form-group">
+
+       <input type="hidden" name="comment_id" id="comment_id" value="0">
+
+       <input type="submit" name="submit" class="btn2 btn-info" id="submit" value="Submit">
+
+     </div>
+
+     <div class="form-group">
+
+       <input type="hidden" class="form-control" name="lessonID" id="" value="<?php echo $data['Lesson']['LessonID'];?>">
+
+     </div>
+
+   </form>
+
+   <span id="comment_message"></span>
+
+   <br>
+
+   <div id="display_comment">
+
+
+
+   </div>
  </div>
 <?php
 include APPROOT . '/resources/views/inc/footer.blade.php';
 ?>
+<script>
+
+  $(document).ready(function(){
+
+    $('#comment_form').on('submit',function(event){
+
+      event.preventDefault();
+
+      var form_data = $(this).serialize();
+
+      $.ajax({
+
+        url:"<?php echo URLROOT . "lesson/add_comment"; ?>",
+
+        method:"POST",
+
+        data:form_data,
+
+        dataType:"JSON",
+
+        success:function(data)
+
+        {
+
+          if(data.error != ''){
+
+            $('#comment_form')[0].reset();
+
+            $('#comment_message').html(data.error);
+
+            $('#comment_id').val('0');
+
+   load_comment();
+
+          }
+
+        }
+
+      })
+
+    });
+
+
+
+
+
+  load_comment();
+
+
+
+  function load_comment()
+
+  {
+
+    $.ajax({
+
+      url:"<?php echo URLROOT . "lesson/fetch_comment?lessonID=" . $data['Lesson']['LessonID']; ?>",
+
+      method:"GET",
+
+      success:function(data)
+
+      {
+
+        $('#display_comment').html(data);
+
+      }
+
+    })
+
+  }
+
+
+
+  $(document).on('click','.reply',function(){
+
+    var comment_id = $(this).attr("id");
+
+    $('#comment_id').val(comment_id);
+
+    $('#comment_name').focus();
+
+  });
+
+
+
+
+
+  });
+
+</script>

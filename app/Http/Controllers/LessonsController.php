@@ -65,7 +65,6 @@ public function  exercisesubmit(Request $rq){
   }
   public function fetch_commnent(Request $rq){
     $this->lessonModel = new Lesson;
-    var_dump($rq->get('lessonID'));
     $result = $this->lessonModel->getComments($rq->get('lessonID'));
     $output = '';
     foreach($result as $row)

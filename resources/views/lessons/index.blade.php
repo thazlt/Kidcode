@@ -64,7 +64,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
   <?php echo Form::token();?>
      <div class="form-group">
 
-       <input type="text" class="form-control" name="comment_name" id="comment_name" placeholder="Enter name">
+       <input type="hidden" class="form-control" name="comment_name" id="comment_name" value="<?php echo session()->get('username');  ?>">
 
      </div>
 

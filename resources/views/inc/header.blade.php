@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="<?php echo URLROOT; ?>resources/css/style.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>resources/css/vertical.css">
     <link rel="shortcut icon" href="<?php echo URLROOT; ?>resources/img/logo.jpg">
+
+    <!--ckeditor 4-->
+    <script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+    <script src="../ckeditor.js"></script>
+
     <title>Kid Code</title>
 </head>
 <body>
@@ -33,6 +38,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/lessons">LESSONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT ?>forum/index">FORUM</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LessonsController;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,10 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('lessons/quiz/', [LessonsController::class, 'quiz']);
   Route::post('lesson/add_comment', [LessonsController::class, 'add_comment']);
   Route::get('lesson/fetch_comment', [LessonsController::class, 'fetch_commnent']);
+  Route::get('forum/index', [ForumController::class, 'index']);
+  Route::get('forum/create_post', [ForumController::class, 'create_post']);
+  Route::get('forum/post', [ForumController::class, 'post']);
+  Route::post('forum/add_comment', [ForumController::class, 'add_comment']);
+  Route::get('forum/fetch_comment', [ForumController::class, 'fetch_commnent']);
+  Route::post('forum/add_post', [ForumController::class, 'add_post']);
 });

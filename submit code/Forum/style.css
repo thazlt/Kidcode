@@ -1,0 +1,428 @@
+h1.forum-title {
+    font-weight: 500;
+}
+body{
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400 ;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.banner-forum {
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    background: linear-gradient(90deg, rgba(185,147,214,1) 0%, rgba(140,166,219,1) 100%);
+    color: white;
+    display: flex;
+    margin: 0 auto;
+}
+
+.cover-forum{
+    background: #EFF1F5;
+    padding : 30px 0px 60px;
+}
+
+.left {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.single {
+    padding: 17px 30px 96px;
+    border-bottom: 4px solid #ececec;
+    border-radius: 10px;
+}
+
+
+
+.poster_avatar img {
+    width: 25px;
+    height: 25px;
+    margin-right: 6px;
+}
+
+a.info-title {
+    color: black;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 28px;
+}
+
+.single-info {
+    float: left;
+    width: calc(100% - 190px);
+}
+
+.info-detail {
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+a.poster_avatar {
+    display: inline-block;
+}
+
+span#day:before {content: "\00a0\00a0 . \00a0\00a0";}
+
+a.tag {
+    display: inline-block;
+    line-height: 24px;
+    border-radius: .25rem;
+    padding: 0 12px;
+    color: #0674ec;
+    font-weight: 600;
+    background: #0674EC12;
+    margin-left: 10px;
+}
+
+.single-box{
+    float: right;
+}
+
+.single-box ul li{
+    display: inline-block;
+    text-align: center;
+    padding: 2px 20px 5px;
+    border-radius: 3px;
+    background: #eff1ef;
+}
+
+.left-list {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(108,111,115,0.1);
+}
+
+p.number {
+    font-weight: 500;
+    color: black;
+}
+
+.single-box ul li span {
+    font-size: 13px;
+    color: #747a86;
+}
+
+.single-box ul li + li {
+    margin-left: 10px;
+}
+
+aside#sidebar {
+    display: block;
+}
+
+a.new_post {
+    background: #0674ec;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 25px 30px;
+    display: block;
+}
+
+aside#sidebar {
+    display: block;
+}
+
+a.new_post {
+    background: #0674ec;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 25px 30px;
+    display: block;
+}
+
+
+.content-card {
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(108,111,115,0.1);
+    margin-bottom: 30px;
+}
+
+.card-title {
+    padding: 30px 30px 28px;
+    display: block;
+    margin-bottom: 0;
+    border-bottom: 2px solid #ececec;
+}
+
+
+.card-body {
+    word-break: break-word;
+    padding: 20px 20px;
+}
+
+.card-body .search {
+    position: relative;
+}
+
+.search input {
+    border-radius: 20px;
+    line-height: 45px;
+    height: 45px;
+    border: 1px solid #d9dfe5;
+    padding: 0 25px;
+}
+
+button.search_btn {
+    position: absolute;
+    line-height: 45px;
+    right: -8px;
+    top: 0;
+    border: 0;
+    width: 45px;
+    text-align: center;
+    background: #0674ec;
+    border-radius: 50%;
+}
+
+.icon_search path {
+    color: white;
+}
+
+ul.card-content {
+    padding: 20px 16px;
+}
+
+.card-content li {
+    list-style: none;
+}
+
+.card-content li a {
+    display: block;
+    line-height: 36px;
+    color: #000000a3;
+    font-weight: 500;
+}
+
+span.icon_chevron {
+    font-size: 11px;
+    margin-right: 10px;
+    color: gray;
+}
+
+span.item-count {
+    float: right;
+}
+
+.pagination-area {
+    text-align: center;
+}
+
+.pagination-area .pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0 0 0;
+    border-radius: 4px;
+}
+
+.pagination-area .page-number {line-height: 36px;display: inline-block;min-width: 48px;border-radius: 25px;font-weight: 500;margin-right: 2px;text-align: center;}
+
+a.page-number:hover, .current {
+    background: #0674ec;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+input#title {
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.text-field {
+    line-height: 50px;
+    background: #f4f5f8;
+    border: none;
+}
+
+input {
+    height: 45px;
+    border-radius: 2px;
+    color: black;
+    font-size: 16px;
+}
+
+.single-post-content {
+    padding: 25px 30px;
+}
+textarea.post-content {
+    max-width:100%;
+    padding: 25px 70px;
+}
+
+
+.single-post {
+    margin-bottom: 30px;
+}
+
+.post-content {
+    border-bottom: 2px solid #ececec;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+}
+
+.post-title {
+    padding-top: 10px;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+h1#post-title {
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+.post-meta {
+    font-size: 14px;
+}
+
+.author {
+    display: inline-block;
+}
+
+.author p {
+    display: inline-block;
+    margin-right: 15px;
+    color: gray;
+}
+
+
+
+.date_time {
+    display: inline-block;
+}
+
+.date-time p, comment-view p {color: gray;}
+
+.date_time p {
+    color: gray;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.comment-view {
+    display: inline-block;
+}
+
+.comment-view p {
+    color: gray;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+#content-div p {
+    margin-bottom: 0;
+    line-height: 30px;
+}
+
+ul.nav.nav-tabs {
+    border: 0;
+}
+
+ul.nav-tabs li {
+    position: relative;
+    display: inline-block;
+    margin-right: -1px;
+    border-right: 1px solid #ececec;
+}
+
+a.active {
+    border-bottom: 0;
+    border: 0;
+    background: none;
+    color: #0674ec;
+}
+
+ul.nav-tabs li a.active:before {
+    opacity: 1;
+    visibility: visible;
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #0674ec;
+    left: 0;
+}
+
+ul.nav-tabs li a span {
+    font-weight: 500;
+}
+
+
+
+.media-left {
+    margin-right: 0;
+}
+
+.comment-form-area .comment-form .media-left a {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+}
+
+.media-body {
+    width: 80%;
+    overflow-wrap: break-word;
+    padding: 10px 20px 10px 20px;
+    flex: 1;
+}
+
+div#new-comment-form {
+    padding: 0px 30px 30px 30px;
+}
+
+.media-left img.media-object {
+    max-width: 70%;
+    border-radius: 50%;
+}
+
+
+.single-post {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(108,111,115,0.1);
+}
+
+
+
+@media only screen and (max-width: 990px) {
+    textarea.post-content {
+        max-width:100%;
+        padding: 25px 100px;
+    }
+}
+@media only screen and (max-width: 767px) {
+
+}

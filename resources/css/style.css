@@ -809,7 +809,7 @@ a.new_post {
     margin-bottom: 30px;
 }
 
-.card-title {
+.card-title.forum {
     padding: 30px 30px 28px;
     display: block;
     margin-bottom: 0;

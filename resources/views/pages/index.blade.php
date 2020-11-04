@@ -98,7 +98,7 @@ include APPROOT . "/resources/views/inc/header.blade.php";
              </div>
              <div class="col-lg-6 promo">
                <div class="promo-text">
-                 <h2>Welcome to Kid Code</h2>
+                 <h2>Welcome to Kid Casdfssdfode</h2>
                  <p>Let your kids explore the Python World and have some fun!!!</p>
                </div>
              </div>

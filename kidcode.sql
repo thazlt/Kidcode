@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 04, 2020 at 02:20 AM
+-- Generation Time: Nov 04, 2020 at 04:15 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `forum_post` (
   `PostDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ViewCount` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`PostID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Dumping data for table `forum_post`
@@ -151,7 +151,16 @@ CREATE TABLE IF NOT EXISTS `forum_post` (
 
 INSERT INTO `forum_post` (`PostID`, `PostTitle`, `PostContent`, `Categories`, `Type`, `Public`, `PostAuthor`, `PostDate`, `ViewCount`) VALUES
 (1, 'This is Title Bla bla bla', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!', 'General', 'Question', 1, 'Thaz', '2020-11-02 09:21:59', 0),
-(4, 'this is thaz', '<p>thaz is handsome</p>', 'General', 'Question', 1, 'thazlt', '2020-11-03 08:10:00', 0);
+(5, 'test', '<p>asdasd</p>', 'HTML', 'Question', 1, 'thazlt', '2020-11-04 10:52:41', 0),
+(4, 'this is thaz', '<p>thaz is handsome</p>', 'General', 'Question', 1, 'thazlt', '2020-11-03 08:10:00', 0),
+(6, 'asdasd', '<p>asdasd</p>', 'CSS', 'Question', 1, 'thazlt', '2020-11-04 10:52:46', 0),
+(7, 'asdasdasdasf', '<p>adsfasdf</p>', 'PYTHON', 'Question', 1, 'thazlt', '2020-11-04 10:52:52', 0),
+(8, 'fdasfasdga', '<p>adsgasdg</p>', 'C++', 'Question', 1, 'thazlt', '2020-11-04 10:52:57', 0),
+(9, 'sadgsadg', '<p>adsgasdg</p>', 'HTML', 'Sharing', 1, 'thazlt', '2020-11-04 10:53:03', 0),
+(10, 'asdfasdf', '<p>asdfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:18', 0),
+(11, 'asdfasdfs', '<p>dafasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:22', 0),
+(12, 'asdfasdf', '<p>adsfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:27', 0),
+(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 0);
 
 -- --------------------------------------------------------
 

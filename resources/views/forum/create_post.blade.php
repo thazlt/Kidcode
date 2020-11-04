@@ -31,6 +31,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                                         <option value="HTML">HTML</option>
                                                         <option value="CSS">CSS</option>
                                                         <option value="PYTHON">PYTHON</option>
+                                                        <option value="JAVASCRIPT">JAVASCRIPT</option>
                                                         <option value="C++">C++</option>
                                                     </select>
                                                 </div>

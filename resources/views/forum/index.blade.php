@@ -92,31 +92,13 @@ $maxPage = $data['MaxPage'];
                             </div>
                             <div class="collapsible-content">
                                 <ul class="card-content">
+                                  <?php foreach ($data['Categories'] as $cat): ?>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>HTML
-                                        <span class="item-count">10</span>
+                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span><?php echo $cat['Categories'] ?>
+                                        <span class="item-count"><?php echo $cat['Num'] ?></span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>CSS
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>PYTHON
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>JAVASCRIPT
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>C++
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
+                                  <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>

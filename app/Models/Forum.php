@@ -89,4 +89,9 @@ class Forum extends Model
     $result = $this->dbh->single();
     return $result['Count']%10==0?(int)($result['Count']/10):(int)($result['Count']/10) + 1;
   }
+public function getCategories(){
+  $sql = "SELECT Categories, COUNT(Categories) as Num FROM forum_post GROUP BY Categories ORDER BY Num DESC";
+  $this->dbh->run($sql, "", $params=[]);
+  return $result = $this->dbh->resultSet();
+}
 }

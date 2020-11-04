@@ -13,6 +13,7 @@ class ForumController extends Controller
       $this->data['CurPage'] = $rq->get('curpage',1);
       $this->data['Post'] = $this->forumModel->getAllPosts($rq->get('search',''), $this->data['CurPage']);
       $this->data['MaxPage'] = $this->forumModel->getMaxPage($rq->get('search',''));
+      $this->data['Categories'] = $this->forumModel->getCategories();
       return view('forum/index')->with('data',$this->data);
     }
     public function create_post(){

@@ -1,5 +1,6 @@
 <?php
 include APPROOT . '/resources/views/inc/header.blade.php';
+//$curPage = NULL!=$_GET('page') ? $_GET('page'): 1;
  ?>
     <div class="banner-forum">
         <div class="container-fluid">
@@ -44,10 +45,18 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                     <div class="pagination-area" style="margin-top: 50px; margin-bottom: 50px;">
                         <nav class="navigation pagination" role="navigation">
                             <div class="nav-links">
+                              <!-- left arrow -->
+                              <?php //if ($curPage > 1): ?>
+                                <a href="" class="page-number"><i class="fas fa-angle-left"></i></a>
+                                <a href="" class="page-number"><i class="fas fa-angle-double-left"></i></a>
+                              <?php// endif; ?>
+                                <!-- numbers -->
                                 <a href="" class="page-number current">1</a>
                                 <a href="" class="page-number">2</a>
                                 <a href="" class="page-number">3</a>
                                 <a href="" class="page-number">4</a>
+                              <!-- right arrow -->
+                                <a href="" class="page-number"><i class="fas fa-angle-right"></i></a>
                                 <a href="" class="page-number"><i class="fas fa-angle-double-right"></i></a>
                             </div>
                         </nav>

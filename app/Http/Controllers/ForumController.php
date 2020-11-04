@@ -10,7 +10,9 @@ class ForumController extends Controller
     private $data;
     public function index(Request $rq){
       $this->forumModel = new Forum;
-      $this->data['Post'] = $this->forumModel->getAllPosts($rq->get('search',''));
+      $this->data['CurPage'] = $rq->get('curpage',1);
+      $this->data['Post'] = $this->forumModel->getAllPosts($rq->get('search',''), $this->data['CurPage']);
+      $this->data['MaxPage'] = $this->forumModel->getMaxPage($rq->get('search',''));
       return view('forum/index')->with('data',$this->data);
     }
     public function create_post(){
@@ -75,8 +77,8 @@ class ForumController extends Controller
       echo json_encode($data);
     }
     public function add_post(Request $rq){
-      var_dump($rq->input());
       $this->forumModel = new Forum;
       $this->forumModel->addPost($rq->input('PostTitle'), $rq->input('PostAuthor'), $rq->input('Categories'), $rq->input('Type'), $rq->input('Public'), $rq->input('Content'));
+      return redirect()->to(URLROOT . "forum/index");
     }
 }

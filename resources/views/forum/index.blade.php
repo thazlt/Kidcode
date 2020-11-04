@@ -1,6 +1,7 @@
 <?php
 include APPROOT . '/resources/views/inc/header.blade.php';
-//$curPage = NULL!=$_GET('page') ? $_GET('page'): 1;
+$curPage = $data['CurPage'];
+$maxPage = $data['MaxPage'];
  ?>
     <div class="banner-forum">
         <div class="container-fluid">
@@ -46,18 +47,19 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                         <nav class="navigation pagination" role="navigation">
                             <div class="nav-links">
                               <!-- left arrow -->
-                              <?php //if ($curPage > 1): ?>
-                                <a href="" class="page-number"><i class="fas fa-angle-left"></i></a>
-                                <a href="" class="page-number"><i class="fas fa-angle-double-left"></i></a>
-                              <?php// endif; ?>
+                              <?php if ($curPage > 1): ?>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=1" class="page-number"><i class="fas fa-angle-double-left"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage-1; ?>" class="page-number"><i class="fas fa-angle-left"></i></a>
+                              <?php endif; ?>
                                 <!-- numbers -->
-                                <a href="" class="page-number current">1</a>
-                                <a href="" class="page-number">2</a>
-                                <a href="" class="page-number">3</a>
-                                <a href="" class="page-number">4</a>
+                                <?php for ($i=1; $i<=$maxPage; $i++): ?>
+                                  <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $i; ?>" class="page-number <?php echo $i==$curPage?"current":""; ?>"><?php echo $i; ?></a>
+                                <?php endfor; ?>
                               <!-- right arrow -->
-                                <a href="" class="page-number"><i class="fas fa-angle-right"></i></a>
-                                <a href="" class="page-number"><i class="fas fa-angle-double-right"></i></a>
+                              <?php if ($curPage!=$maxPage): ?>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fas fa-angle-right"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $maxPage; ?>" class="page-number"><i class="fas fa-angle-double-right"></i></a>
+                              <?php endif; ?>
                             </div>
                         </nav>
                     </div>

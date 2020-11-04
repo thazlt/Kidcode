@@ -69,13 +69,24 @@ class Forum extends Model
     VALUES (?,?,?,?,?,?)";
     $this->dbh->run($sql, "ssssis", $params=[$PostTitle, $PostAuthor, $Categories, $Type, $Public, $Content]);
   }
-  public function getAllPosts($search){
+  public function getAllPosts($search,$curPage){
     $search="%".$search."%";
+    $index=($curPage-1)*10;
     $sql = "SELECT forum_post.PostID, PostTitle, PostAuthor, PostDate, Categories, ViewCount, COUNT(forum_comment.CommentID) AS CommentCount
             FROM forum_post LEFT JOIN forum_comment ON forum_post.PostID = forum_comment.PostID
             WHERE PostTitle LIKE ?
-            GROUP BY forum_post.PostID";
-    $this->dbh->run($sql, "s", $params=[$search]);
+            GROUP BY forum_post.PostID
+            LIMIT ?,10";
+    $this->dbh->run($sql, "si", $params=[$search,$index]);
     return $result = $this->dbh->resultSet();
+  }
+  public function getMaxPage($search){
+    $search="%".$search."%";
+    $sql = "SELECT Count(PostID) as Count
+            FROM forum_post
+            WHERE PostTitle LIKE ?";
+    $this->dbh->run($sql, "s", $params=[$search]);
+    $result = $this->dbh->single();
+    return $result['Count']%10==0?(int)($result['Count']/10):(int)($result['Count']/10) + 1;
   }
 }

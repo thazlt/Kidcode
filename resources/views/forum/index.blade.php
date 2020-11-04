@@ -68,7 +68,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                             <span class="icon_edit"><i class="fas fa-edit"></i>New Post</span>
                         </a>
                         <div class="content-card">
-                            <div class="card-title">
+                            <div class="card-title forum">
                                 <h4>Search</h4>
                             </div>
                             <div class="card-body">
@@ -85,7 +85,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                             </div>
                         </div>
                         <div class="forum-categories content-card">
-                            <div class="card-title">
+                            <div class="card-title forum">
                                 <h4>Categories</h4>
                             </div>
                             <div class="collapsible-content">

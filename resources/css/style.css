@@ -861,8 +861,8 @@ ul.card-content {
 .card-content li a {
     display: block;
     line-height: 36px;
-    color: #000000a3;
-    font-weight: 500;
+    color: #00000075;
+    /* font-weight: 500; */
 }
 
 span.icon_chevron {
@@ -1080,6 +1080,12 @@ div#new-comment-form {
 
 .single-box{
   float:none;
+}
+
+
+.cover-forum .container .row .col-lg-4 {
+  text-align: left;
+ 
 }
 @media only screen and (max-width: 990px) {
     textarea.post-content {

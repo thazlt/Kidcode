@@ -3,12 +3,10 @@ include APPROOT . "/resources/views/inc/header.blade.php";
  ?>
 
     <!-- Banner -->
-    <div class="container-fluid">
-      <div class="banner">
-        <div>
-          <h1>ABOUT US</h1>
+    <div class="banner-forum">
+        <div class="container-fluid">
+            <h1 class="forum-title">About Us</h1>
         </div>
-      </div>
     </div>
     <div class="container-fluid">
       <div class="row team-info">

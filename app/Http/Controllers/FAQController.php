@@ -12,6 +12,6 @@ class FAQController extends Controller
     public function index(Request $rq){
       echo"Hello di";
       // lam xong view uncomment cai nay
-      //return view('FAQ/index')->with('data',$this->data);
+      //return view('faqs/index')->with('data',$this->data);
     }
 }

@@ -11,8 +11,8 @@ class ForumController extends Controller
     public function index(Request $rq){
       $this->forumModel = new Forum;
       $this->data['CurPage'] = $rq->get('curpage',1);
-      $this->data['Post'] = $this->forumModel->getAllPosts($rq->get('search',''), $this->data['CurPage']);
-      $this->data['MaxPage'] = $this->forumModel->getMaxPage($rq->get('search',''));
+      $this->data['Post'] = $this->forumModel->getAllPosts($rq->get('search',''), $this->data['CurPage'],$rq->get('categories',''));
+      $this->data['MaxPage'] = $this->forumModel->getMaxPage($rq->get('search',''),$rq->get('categories',''));
       $this->data['Categories'] = $this->forumModel->getCategories();
       return view('forum/index')->with('data',$this->data);
     }

@@ -94,8 +94,8 @@ $maxPage = $data['MaxPage'];
                                 <ul class="card-content">
                                   <?php foreach ($data['Categories'] as $cat): ?>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span><?php echo $cat['Categories'] ?>
-                                        <span class="item-count"><?php echo $cat['Num'] ?></span>
+                                        <a href="<?php echo URLROOT; ?>forum/index?categories=<?php echo $cat['Categories']; ?>"><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span><?php echo $cat['Categories']; ?>
+                                        <span class="item-count"><?php echo $cat['Num']; ?></span>
                                         </a>
                                     </li>
                                   <?php endforeach; ?>

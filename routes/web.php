@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LessonsController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\FAQController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,5 @@ Route::group(['middleware' => ['web']], function() {
   Route::post('forum/add_comment', [ForumController::class, 'add_comment']);
   Route::get('forum/fetch_comment', [ForumController::class, 'fetch_commnent']);
   Route::post('forum/add_post', [ForumController::class, 'add_post']);
+  Route::get('FAQ/index', [FAQController::class, 'index']);
 });

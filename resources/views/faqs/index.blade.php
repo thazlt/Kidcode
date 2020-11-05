@@ -5,7 +5,7 @@ $maxPage = $data['MaxPage'];
  ?>
     <div class="banner-forum">
         <div class="container-fluid">
-            <h1 class="forum-title">Discussion - Questions and Answers</h1>
+            <h1 class="forum-title">Discussion - Questionádfss and Answers</h1>
         </div>
     </div>
 

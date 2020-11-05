@@ -69,23 +69,25 @@ class Forum extends Model
     VALUES (?,?,?,?,?,?)";
     $this->dbh->run($sql, "ssssis", $params=[$PostTitle, $PostAuthor, $Categories, $Type, $Public, $Content]);
   }
-  public function getAllPosts($search,$curPage){
+  public function getAllPosts($search,$curPage,$categories){
     $search="%".$search."%";
+    $categories="%".$categories."%";
     $index=($curPage-1)*6;
     $sql = "SELECT forum_post.PostID, PostTitle, PostAuthor, PostDate, Categories, ViewCount, COUNT(forum_comment.CommentID) AS CommentCount
             FROM forum_post LEFT JOIN forum_comment ON forum_post.PostID = forum_comment.PostID
-            WHERE PostTitle LIKE ?
+            WHERE PostTitle LIKE ? AND Categories LIKE ?
             GROUP BY forum_post.PostID
             LIMIT ?,6";
-    $this->dbh->run($sql, "si", $params=[$search,$index]);
+    $this->dbh->run($sql, "ssi", $params=[$search,$categories,$index]);
     return $result = $this->dbh->resultSet();
   }
-  public function getMaxPage($search){
+  public function getMaxPage($search,$categories){
     $search="%".$search."%";
+    $categories="%".$categories."%";
     $sql = "SELECT Count(PostID) as Count
             FROM forum_post
-            WHERE PostTitle LIKE ?";
-    $this->dbh->run($sql, "s", $params=[$search]);
+            WHERE PostTitle LIKE ? AND Categories LIKE ?";
+    $this->dbh->run($sql, "ss", $params=[$search,$categories]);
     $result = $this->dbh->single();
     return $result['Count']%6==0?(int)($result['Count']/6):(int)($result['Count']/6) + 1;
   }

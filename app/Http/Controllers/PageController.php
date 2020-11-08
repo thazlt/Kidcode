@@ -31,10 +31,6 @@ class PageController extends Controller
         $this->data=[];
         $this->lessonModel = new Page;
         $this->data = $this->lessonModel->getLessons();
-        if(!session()->get("loggedin"))
-        {
-          echo "<script type='text/javascript'>alert('You are not logged in!!! Login or Register a new account to enter a lesson');</script>";
-        }
         return view('pages/lessons')->with('data',$this->data);
     }
     /**

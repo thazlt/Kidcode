@@ -6,7 +6,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" data-toggle="modal" data-target="#modal-signup" style="cursor: pointer;">Sign Up</a>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-login" style="cursor: pointer;">Login</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#modal-login" style="cursor: pointer;">Login</a>
         </div>
 
         <!-- Modal Sign Up-->

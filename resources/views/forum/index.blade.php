@@ -66,9 +66,13 @@ $maxPage = $data['MaxPage'];
                 </div>
                 <div class="col-lg-4">
                     <aside id="sidebar" class="sidebar">
+                      <?php if (session()->get('loggedin')): ?>
                         <a href="<?php echo URLROOT; ?>forum/create_post" class="new_post" style="text-align: center;">
                             <span class="icon_edit"><i class="fas fa-edit"></i>New Post</span>
                         </a>
+                      <?php else: ?>
+                        <h3><a data-toggle="modal" data-target="#modal-login" style="cursor: pointer; color: #01c5c4cf;">Login</a> or <a data-toggle="modal" data-target="#modal-signup" style="cursor: pointer; color: #01c5c4cf;">Sign up</a> to create a post</h3>
+                      <?php endif; ?>
                         <div class="content-card">
                             <div class="card-title forum">
                                 <h4>Search</h4>
@@ -94,7 +98,7 @@ $maxPage = $data['MaxPage'];
                                 <ul class="card-content">
                                   <?php foreach ($data['Categories'] as $cat): ?>
                                     <li>
-                                        <a href="<?php echo URLROOT; ?>forum/index?categories=<?php echo $cat['Categories']; ?>"><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span><?php echo $cat['Categories']; ?>
+                                        <a href="<?php echo URLROOT; ?>forum/index?categories=<?php $cat = str_replace('+', '%2B', $cat); echo $cat['Categories']; ?>"><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span><?php $cat = str_replace('%2B', '+', $cat); echo $cat['Categories']; ?>
                                         <span class="item-count"><?php echo $cat['Num']; ?></span>
                                         </a>
                                     </li>

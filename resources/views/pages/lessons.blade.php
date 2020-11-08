@@ -4,6 +4,11 @@ include APPROOT . "/resources/views/inc/header.blade.php";
  ?>
    <!-- Info -->
     <div class="container-fluid">
+      <?php if (!session()->get('loggedin')): ?>
+        <div class="course-box">
+            <h3><a data-toggle="modal" data-target="#modal-login" style="cursor: pointer; color: #01c5c4cf;">Login</a> or <a data-toggle="modal" data-target="#modal-signup" style="cursor: pointer; color: #01c5c4cf;">Sign up</a> to view lessons</h3>
+        </div>
+      <?php endif; ?>
       <div class="course-box" style="background-color: #51c5d6;">
         <div class="course-head">
           <h2><?php echo $data[0]['LessonName'] ?></h2>

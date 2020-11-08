@@ -21,6 +21,7 @@ class ForumController extends Controller
     }
     public function post(Request $rq){
       $this->forumModel = new Forum;
+      $this->forumModel->addView($rq->get('PostID'));
       $this->data['Post'] = $this->forumModel->getPost($rq->get('PostID'));
       $this->data['Comments'] = $this->forumModel->getComments($rq->get('PostID'));
       //  var_dump($this->data);

@@ -20,7 +20,7 @@ $maxPage = $data['MaxPage'];
                                     <a href="<?php echo URLROOT; ?>forum/post?PostID=<?php echo $post['PostID'] ?>" class="info-title"><?php echo $post['PostTitle']; ?></a>
                                     <div class="info-detail">
                                         <a href="" class="poster_avatar">
-                                            <img src="<?php echo URLROOT; ?>resources/img/ava.png" alt="User Avatar">User
+                                            <img src="<?php echo URLROOT; ?>resources/img/ava.png" alt="User Avatar"><?php echo $post['PostAuthor'] ?>
                                         </a>
                                         <span id="day"><?php echo substr($post['PostDate'],0,10); ?></span>
                                         <a class="tag" href=""><?php echo $post['Categories']; ?></a>

@@ -43,6 +43,9 @@
                     <a class="nav-link" href="<?php echo URLROOT ?>forum/index">FORUM</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT ?>FAQ/index">FORUM</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>
                 </li>
             </ul>

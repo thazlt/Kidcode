@@ -827,7 +827,7 @@ button.search_btn {
     border: 0;
     width: 45px;
     text-align: center;
-    background: #0674ec;
+    background: #005C85;
     border-radius: 50%;
 }
 
@@ -1093,8 +1093,16 @@ div#new-comment-form {
   
 }
 
+button.btn.btn-primary.button.new_post {
+  margin: 20px 8px;
+  width: 97% !important;
+  height: 44px;
+  font-size: 20px;
+  background: #005C85;
+}
+
  /* FAQ */
- .accordion-item{
+ /* .accordion-item{
   background-color: #283042;
   border-radius: 10px;
   margin-bottom:5px;
@@ -1121,9 +1129,9 @@ div#new-comment-form {
 
 .accordion-link .fa-minus {
   display: none;
-}
+} */
 
-.answer {
+/* .answer {
   position: relative;
   background-color: #212838;
   max-height: 0;
@@ -1145,23 +1153,89 @@ div#new-comment-form {
   color: rgba(255,255,255,.6);
   font-size: 15px;
   padding: 20px;
-}
+} */
 
-.accordion-item:target .answer {
+/* .accordion-item:target .answer {
   max-height: 20rem;
-}
-.accordion-item:target .accordion-link .fa-plus {
+} */
+/* .accordion-item:target .accordion-link .fa-plus {
   display: none;
 }
 
 .accordion-item:target .accordion-link .fa-minus {
   display: block;
+} */
+
+/* .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #8fc460;
+} */
+
+
+/* FAQ 2 */
+/* FAQ 2 -left tab */
+div#v-pills-tab {
+  background: #D6EDE6;
+  color: white;
+  border-radius: 10px;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #fff;
-  background-color: #8fc460;
+  color:#273C36;
+  background-color: unset;
 }
+
+.nav-pills .nav-link {
+  border-radius: .25rem;
+  color:#3A8977;
+  padding-bottom: 30px;
+}
+/* FAQ 2 - accordion */
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+}
+.accordion-item {
+  background-color: #fff;
+  color: #111;
+  /* margin-bottom: 1rem; */
+  /* border-radius: 0.5rem; */
+  /* box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25); */
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  color: #3A8977;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+ 
 
 @media only screen and (max-width: 990px) {
   textarea.post-content {

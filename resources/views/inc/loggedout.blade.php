@@ -38,6 +38,13 @@
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control email" name="email"  placeholder="Enter your Email">
                             </div>
+                            <div class="form-group">
+                              <label for="usertype">You are a?</label>
+                              <select class="" name="usertype">
+                                <option value="0">Student</option>
+                                <option value="1">Teacher</option>
+                              </select>
+                            </div>
                             <div class="modal-footer">
                                 <button class="btn btn-primary" name="submit" type="submit">Register</button>
                             </div>

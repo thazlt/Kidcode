@@ -1,6 +1,6 @@
 <?php
 include APPROOT . "/resources/views/inc/header.blade.php";
-
+$colors =['#51c5d6','rgb(238, 108, 75)','rgba(250, 207, 15)'];
  ?>
    <!-- Info -->
     <div class="container-fluid">
@@ -9,69 +9,30 @@ include APPROOT . "/resources/views/inc/header.blade.php";
             <h3><a data-toggle="modal" data-target="#modal-login" style="cursor: pointer; color: #01c5c4cf;">Login</a> or <a data-toggle="modal" data-target="#modal-signup" style="cursor: pointer; color: #01c5c4cf;">Sign up</a> to view lessons</h3>
         </div>
       <?php endif; ?>
-      <div class="course-box" style="background-color: #51c5d6;">
-        <div class="course-head">
-          <h2><?php echo $data[0]['LessonName'] ?></h2>
-        </div>
-        <div class="course-content">
-          <div>
-            <img src="<?php echo URLROOT ?>/resources/img/beginner.png" class="img-fluid course-img">
-          </div>
-          <div class="course-info">
-            <div>
-              <p><?php echo $data[0]['LessonDescription'] ?>
-              </p>
-            </div>
-            <div>
-              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=0"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
-              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=0"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
-            </div>
-          </div>
 
-        </div>
-      </div>
+      <?php foreach ($data as $lesson): ?>
+        <div class="course-box" style="background-color: <?php $colorNum = (int)($lesson['LessonID']%3); echo $colors[$colorNum]; ?>;">
+          <div class="course-head">
+            <h2><?php echo $lesson['LessonName'] ?></h2>
+          </div>
+          <div class="course-content">
+            <div>
+              <img src="<?php echo URLROOT ?>/resources/img/<?php echo $lesson['logo'] ?>" class="img-fluid course-img">
+            </div>
+            <div class="course-info">
+              <div>
+                <p><?php echo $lesson['LessonDescription'] ?>
+                </p>
+              </div>
+              <div>
+                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=". $lesson['LessonID']; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
+                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=" . $lesson['LessonID']; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
+              </div>
+            </div>
 
-      <div class="course-box" style="background-color: rgb(238, 108, 75);">
-        <div class="course-head">
-          <h2><?php echo $data[1]['LessonName'] ?></h2>
-        </div>
-        <div class="course-content">
-          <div>
-            <img src="<?php echo URLROOT ?>/resources/img/inter.png" class="img-fluid course-img">
-          </div>
-          <div class="course-info">
-            <div>
-              <p class="lead"><?php echo $data[1]['LessonDescription'] ?>
-              </p>
-            </div>
-            <div>
-              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=1"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
-                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=1"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
-            </div>
           </div>
         </div>
-      </div>
-
-      <div class="course-box" style="background-color: rgba(250, 207, 15);">
-        <div class="course-head">
-          <h2><?php echo $data[2]['LessonName'] ?></h2>
-        </div>
-        <div class="course-content">
-          <div>
-            <img src="<?php echo URLROOT ?>/resources/img/advanced.png" class="img-fluid course-img">
-          </div>
-          <div class="course-info">
-            <div>
-              <p class="lead"><?php echo $data[2]['LessonDescription'] ?>
-              </p>
-            </div>
-            <div>
-              <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=2"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
-                <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=2"; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
     <script type="text/javascript">
     $(document).ready(function(){

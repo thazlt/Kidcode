@@ -110,6 +110,7 @@ class PageController extends Controller
         'email' => trim($_POST['email']),
         'password' => trim($_POST['password']),
         'confirm_password' => trim($_POST['confirm_password']),
+        'usertype' => $_POST['usertype'],
         'username_err' => '',
         'password_err' => '',
         'confirm_password_err' => '',

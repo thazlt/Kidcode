@@ -22,8 +22,9 @@ class Page extends Model
     $params[] = $data['username'];
     $params[] = $data['password'];
     $params[] = $data['email'];
-    $sql = "INSERT INTO userinfo (USERNAME, H_PASSWORD, EMAIL) VALUES (?,?,?)";
-    return $this->dbh->run($sql, "sss", $params);
+    $params[] = $data['usertype'];
+    $sql = "INSERT INTO userinfo (USERNAME, H_PASSWORD, EMAIL,U_TYPE) VALUES (?,?,?,?)";
+    return $this->dbh->run($sql, "sssi", $params);
   }
 
   public function findUserByName($name) {

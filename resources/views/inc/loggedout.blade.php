@@ -70,7 +70,6 @@
                             <div class="form-group">
                                 <label for="Username">Username</label>
                                 <input name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <small id="usernameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="Password">Password</label>

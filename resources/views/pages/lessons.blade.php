@@ -27,9 +27,14 @@ $colors =['#51c5d6','rgb(238, 108, 75)','rgba(250, 207, 15)'];
               <div>
                 <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=". $lesson['LessonID']; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
                 <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=" . $lesson['LessonID']; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
+                <?php if (session()->get('loggedin')): ?>
+                  <h3>Progress: </h3>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo $lesson['Progress'] ?>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                <?php endif; ?>
               </div>
             </div>
-
           </div>
         </div>
       <?php endforeach; ?>

@@ -75,9 +75,12 @@ class Page extends Model
   public function getUserType() {
     return $this->user['U_TYPE'];
   }
-  public function getLessons(){
-    $sql = "SELECT * FROM lesson";
-    $this->dbh->run($sql, "", $params=[]);
+  public function getLessons($username){
+    $sql = "SELECT lesson.*, COUNT(ExerciseID)/lesson.ExerciseNum*100 as Progress
+        FROM lesson
+        LEFT JOIN (SELECT * FROM progress WHERE progress.username=?) as progress on lesson.LessonID=progress.LessonID
+        GROUP BY LessonID";
+    $this->dbh->run($sql, "s", $params=[$username]);
     $result = $this->dbh->resultSet();
     return $result;
   }

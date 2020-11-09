@@ -17,7 +17,6 @@ include APPROOT . '/resources/views/inc/header.blade.php';
          <thead>
            <tr>
              <th scope="col">EXERCISES</th>
-             <th scope="col">PROGRESS</th>
              <th scope="col">SCORE</th>
            </tr>
          </thead>
@@ -26,35 +25,20 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                <tr>
                  <th scope="row"><a href = "<?php echo URLROOT . "lessons/exercise?lessonID=" . $data['Lesson']['LessonID'] . "&exerciseID=" . $key['ExerciseID'] ?>"><?php echo $key['ExerciseID']. "/&nbsp&nbsp&nbsp&nbsp" . $key['ExerciseName'] ?></a></th>
                  <td>
-                   <div class="progress">
-                     <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                   </div>
-                 </td>
-                 <td>
-                   <span class="fa fa-star" id="star1" onclick="add(this,1)"></span>
-                   <span class="fa fa-star" id="star2" onclick="add(this,2)"></span>
-                   <span class="fa fa-star" id="star3" onclick="add(this,3)"></span>
-                   <span class="fa fa-star" id="star4" onclick="add(this,4)"></span>
-                   <span class="fa fa-star" id="star5" onclick="add(this,5)"></span>
+                   <?php $errors=($key['Errors']!==null)?$key['Errors']:100; $score = (int)((100-$errors)/20);?>
+                   <?php for ($i=1; $i<=5; $i++){
+                     if ($i<=$score) {
+                       echo "<span class='fas fa-star checked'></span>";
+                     } else {
+                       echo "<span class='fas fa-star'></span>";
+                     }
+                   }
+                    ?>
                  </td>
                </tr>
            <?php endforeach; ?>
          </tbody>
        </table>
-       <script>
-         function add(ths, sno) {
-           for (var i = 1; i <= 5; i++) {
-             var cur = document.getElementById("star" + i);
-             cur.className = "fa fa-star";
-           }
-           for (var i = 1; i <= sno; i++) {
-             var cur = document.getElementById("star" + i);
-             if (cur.className == "fa fa-star") {
-               cur.className = "fa fa-star checked";
-             }
-           }
-         }
-       </script>
      </div>
    </div>
  </div>

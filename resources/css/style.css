@@ -16,7 +16,7 @@ body {
   color: #5a5a5a;
   width: 100%;
   /* min-height: 100%; */
-  
+
 }
 table.table {
     margin-top: 55px;
@@ -1070,7 +1070,7 @@ div#new-comment-form {
 
 .cover-forum .container .row .col-lg-4 {
   text-align: left;
- 
+
 }
 
 
@@ -1090,7 +1090,7 @@ div#new-comment-form {
 .banner-faq p{
   font-size: 12px;
   font-style: italic;
-  
+
 }
 
  /* FAQ */
@@ -1192,4 +1192,10 @@ font-size: 10px;
   .single-info{
     width: 100%;
   }
+}
+.checked{
+  color:orange;
+}
+.progress {
+    width: 40%;
 }

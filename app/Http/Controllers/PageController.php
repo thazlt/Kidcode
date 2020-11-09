@@ -30,7 +30,7 @@ class PageController extends Controller
     {
         $this->data=[];
         $this->lessonModel = new Page;
-        $this->data = $this->lessonModel->getLessons();
+        $this->data = $this->lessonModel->getLessons(session()->get('username'));
         return view('pages/lessons')->with('data',$this->data);
     }
     /**

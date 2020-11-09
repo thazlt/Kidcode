@@ -21,10 +21,16 @@ class Lesson extends Model
     $this->dbh->run($sql, 'i', $params);
     return $this->dbh->single();
   }
-  public function getExercises($id){
-    $params[] = $id;
-    $sql = "SELECT * FROM exercise WHERE LessonID = ?";
-    $this->dbh->run($sql, 'i', $params);
+  public function getExercises($lessonID,$username){
+    $params[] = $username;
+    $params[] = $lessonID;
+    $sql = "SELECT exercise.LessonID, exercise.ExerciseID, ExerciseName, ExerciseDescription, Code, Errors
+            FROM `exercise`
+            LEFT JOIN (SELECT * FROM progress WHERE username = ?) as progress
+            ON exercise.LessonID = progress.LessonID and exercise.ExerciseID = progress.ExerciseID
+            WHERE exercise.LessonID = ?
+            ORDER BY exercise.LessonID, exercise.ExerciseID ASC";
+    $this->dbh->run($sql, 'si', $params);
     return $this->dbh->resultSet();
   }
   public function getExercise($Lid, $Eid){

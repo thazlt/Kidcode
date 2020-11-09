@@ -19,7 +19,7 @@ public function index(Request $rq){
   else{
     $this->lessonModel = new Lesson;
     $lessondata = $this->lessonModel->getLesson(intval($rq->get('lessonID')));
-    $exercisedata = $this->lessonModel->getExercises(intval($rq->get('lessonID')));
+    $exercisedata = $this->lessonModel->getExercises(intval($rq->get('lessonID')), session()->get('username'));
     $this->data['Lesson'] = $lessondata;
     $this->data['Exercise'] = $exercisedata;
     $headcolor=['#7bcedc','rgb(238, 108, 75)','rgba(250, 207, 15)'];

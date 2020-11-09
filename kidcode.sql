@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 04, 2020 at 04:15 PM
+-- Generation Time: Nov 09, 2020 at 04:12 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `forum_post` (
 --
 
 INSERT INTO `forum_post` (`PostID`, `PostTitle`, `PostContent`, `Categories`, `Type`, `Public`, `PostAuthor`, `PostDate`, `ViewCount`) VALUES
-(1, 'This is Title Bla bla bla', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!', 'General', 'Question', 1, 'Thaz', '2020-11-02 09:21:59', 0),
+(1, 'This is Title Bla bla bla', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!', 'General', 'Question', 1, 'Thaz', '2020-11-02 09:21:59', 1),
 (5, 'test', '<p>asdasd</p>', 'HTML', 'Question', 1, 'thazlt', '2020-11-04 10:52:41', 0),
 (4, 'this is thaz', '<p>thaz is handsome</p>', 'General', 'Question', 1, 'thazlt', '2020-11-03 08:10:00', 0),
 (6, 'asdasd', '<p>asdasd</p>', 'CSS', 'Question', 1, 'thazlt', '2020-11-04 10:52:46', 0),
@@ -159,8 +159,8 @@ INSERT INTO `forum_post` (`PostID`, `PostTitle`, `PostContent`, `Categories`, `T
 (9, 'sadgsadg', '<p>adsgasdg</p>', 'HTML', 'Sharing', 1, 'thazlt', '2020-11-04 10:53:03', 0),
 (10, 'asdfasdf', '<p>asdfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:18', 0),
 (11, 'asdfasdfs', '<p>dafasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:22', 0),
-(12, 'asdfasdf', '<p>adsfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:27', 0),
-(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 0);
+(12, 'asdfasdf', '<p>adsfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:27', 4),
+(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 6);
 
 -- --------------------------------------------------------
 
@@ -174,6 +174,7 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `LessonName` varchar(255) NOT NULL,
   `LessonDescription` text NOT NULL,
   `ExerciseNum` int(11) NOT NULL,
+  `logo` varchar(255) NOT NULL,
   PRIMARY KEY (`LessonID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -181,10 +182,10 @@ CREATE TABLE IF NOT EXISTS `lesson` (
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`) VALUES
-(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8),
-(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9),
-(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5);
+INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`) VALUES
+(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png'),
+(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png'),
+(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png');
 
 -- --------------------------------------------------------
 
@@ -313,24 +314,8 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 --
 
 INSERT INTO `userinfo` (`USERNAME`, `H_PASSWORD`, `EMAIL`, `DOB`, `U_Type`) VALUES
-('thazlt', '$2y$10$N6FeQohNhq35J8TyZLRWAeeAy6JoqSHaNwYpAgGQLTRP/hEpXjR9u', 'thazlt1810@gmail.com', NULL, NULL),
-('nhule', '$2y$10$XA/um58ur3hPKMu11tB3v.n2nZkFGoS9D0/fTyKp3D4B1P6AsrQdC', '1459039@itec.hcmus.edu.vn', NULL, NULL),
-('vampore', '$2y$10$n3IP7LNsWTWPbyOOS2WhtuouxZVAH6wlaqTTcZH7157juDdPsnOoS', 'kduynguyen978@gmail.com', NULL, NULL),
-('Di12345', '$2y$10$Chayl/yzNo/9CJ7sgKhPgeePvlYeApj5Lk8J0X.TfUJxnvDinZC4O', 'Di@mail.com', NULL, NULL),
-('ItecStudent', '$2y$10$lauv9vm7vg21oPDm5xDcs.vGoXh4mcz53ySRvaaq5EBG5tllonMKi', 'downshare@gmail.com', NULL, NULL),
-('huehue', '$2y$10$yNTeIrAN8rPsXaqTzpqe8es7LScCrA7DLSI9XW4BCstUnpu64Gv9C', 'sam@gmail.com', NULL, NULL),
-('hlongtd', '$2y$10$hwPKQfD9/ubwZXTJtzBcFO0PDkFbC7orHjnqjTjHboYnyMyqlGp9K', 'hlongtd1@gmail.com', NULL, NULL),
-('admin10', '$2y$10$AhgiKbTVgtHE2bCTMpwQGeEsy3rQkhLWuAHoOqYhD3xRSw4nzeB5W', 'sam@mmm.com', NULL, NULL),
-('Bui Nhat Tan', '$2y$10$YLd5FBoapOsNiq2eUpKOvegV8o3Meb9NS3.mbFzaQqrHrwaQ09stW', 'buinhattan28@gmail.com', NULL, NULL),
-('thazlt1810', '$2y$10$0Foro8kIyDeyFnI.HNqH8ujDljCHO1sFdslM/cVUaJQphPQ.S6oIO', 'thazlt1810@gmail.com', NULL, NULL),
-('hacker1234', '$2y$10$dRfoYR.ZADqnS5fxa8aeh.edMCzmr.OzzJ8u5OkFANmsoz.GdT4lS', 'hacker1234@gmail.com', NULL, NULL),
-('alert(&#34;XSS);', '$2y$10$nYK9r/h3Hbi5iCjU2mxyW.T5tO2IEYBSEy7nMLBvDMqP9SAMY5T3m', 'sdfgdsfg@gmail.com', NULL, NULL),
-('Mr A and B', '$2y$10$ppdfobiLqZuJIpcrOCPBeegL43tnPzTJ.zzd5QcYTiWSoFktyhB/m', 'a@gmail.com', NULL, NULL),
-('admin', '$2y$10$LhjZ4G5Q6BrLwHQbgnCjiuSq5IsB0lGdHyNlkMf3eAQQkNQrSTAS.', 'sdfgdsfg@gmail.com', NULL, NULL),
-('sam2020', '$2y$10$ZdApjWDh.g.8uUDEDKhWtO91x/tNH8dn4YyWKE0yItmYQD7v4TEMq', 'sam2@gmail.com', NULL, NULL),
-('1859015', '$2y$10$5pTpgEuAPOZpSMyN65YKt.N7ucYsBKL6Ys6O0Qqfx2TjK8hWMkwDa', 'xboymocx@yahoo.com.vn', NULL, NULL),
-('iwantlearn', '$2y$10$QVkFkqVqplFb4DTmSKWuleVZKoIEtE51fRfbA1Wpvih64y7q..6Cq', 'vs@gmail.com', NULL, NULL),
-('thazlt181020', '$2y$10$IzkT0uCaj6qGBLCq1gnAzub5Jh/XX/WGZilSbUWb3vRK80zF/SrQ2', 'thazlt1810@gmail.com', NULL, NULL);
+('thazlt', '$2y$10$N6FeQohNhq35J8TyZLRWAeeAy6JoqSHaNwYpAgGQLTRP/hEpXjR9u', 'thazlt1810@gmail.com', NULL, b'0'),
+('thazsensei', '$2y$10$VcbQcGy6lHMdB4Oau68Yzuiw9BwAdtJT30jMrSXt01yg7NORjjvUW', 'thazlt1810@gmail.com', NULL, b'1');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

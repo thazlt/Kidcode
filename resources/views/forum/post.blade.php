@@ -53,7 +53,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                     <ul class="nav nav-tabs">
                                         <li>
                                             <a href="" aria-controls="product-comment" role="tab" data-toggle="tab" class="active">
-                                                Comments <span>(<?php echo count($data['Comments']); ?>)</span>
+                                                Comments <span>(<?php echo ($data['CommentsCount']['Num']); ?>)</span>
                                             </a>
                                         </li>
                                     </ul>

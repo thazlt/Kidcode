@@ -29,6 +29,13 @@ class Forum extends Model
     $result = $this->dbh->resultSet();
     return $result;
   }
+  public function getCommentsCounts($postID){
+    $sql = "SELECT Count(*) as Num FROM forum_comment
+    WHERE PostID = ?";
+    $this->dbh->run($sql, "i", $params=[$postID]);
+    $result = $this->dbh->single();
+    return $result;
+  }
   public function getReplyComments($parent_id = 0, $marginleft = 0){
     $sql = "SELECT * FROM forum_comment WHERE ParentCommentID = '".$parent_id."'";
     $this->dbh->run($sql, "", $params=[]);

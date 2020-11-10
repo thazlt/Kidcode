@@ -1181,8 +1181,10 @@ div#v-pills-tab {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color:#273C36;
+  color:#FFA17A;
   background-color: unset;
+  /* color: white;
+  background-color: #3A8977; */
 }
 
 .nav-pills .nav-link {
@@ -1233,7 +1235,12 @@ div#v-pills-tab {
   padding: 1rem;
   line-height: 1.5rem;
   border-top: 1px solid;
-  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+  border-image: linear-gradient(to right, transparent, #7244B8, transparent) 1;
+  color: #A16F30;
+}
+
+.progress-bar {
+  background: #aecc51;
 }
  
 

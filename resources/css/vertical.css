@@ -14,8 +14,8 @@
 }
 
 .team-info{
-  width: 90%;
-  margin: 0 auto;
+  /* width: 90%;
+  margin: 0 auto; */
 }
 
 .team-member{
@@ -35,7 +35,18 @@
   grid-gap: 10px;
 }
 
+ul#myTab {
+  /* background: #D6EDE6; */
+  border-radius: 10px;
+}
+ul#myTab.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: white;
+  background-color: #3A8977;
+}
 
+#myTabContent h2 {
+  color: #FFA17A;
+}
 
 @media only screen and (max-width: 768px){
   .team-member{

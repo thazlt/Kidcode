@@ -75,13 +75,23 @@ class Page extends Model
   public function getUserType() {
     return $this->user['U_TYPE'];
   }
-  public function getLessons($username){
+  public function getLessons($username, $page){
+    $page--;
+    $index=($page!==null)?$page*3:0;
     $sql = "SELECT lesson.*, COUNT(ExerciseID)/lesson.ExerciseNum*100 as Progress
         FROM lesson
         LEFT JOIN (SELECT * FROM progress WHERE progress.username=?) as progress on lesson.LessonID=progress.LessonID
-        GROUP BY LessonID";
-    $this->dbh->run($sql, "s", $params=[$username]);
+        GROUP BY LessonID
+        LIMIT ?,3";
+    $this->dbh->run($sql, "si", $params=[$username,$index]);
     $result = $this->dbh->resultSet();
     return $result;
+  }
+  public function getMaxPage(){
+    $sql = "SELECT Count(LessonID) as Count
+            FROM lesson";
+    $this->dbh->run($sql, "", $params=[]);
+    $result = $this->dbh->single();
+    return $result['Count']%3==0?(int)($result['Count']/3):(int)($result['Count']/3) + 1;
   }
 }

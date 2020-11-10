@@ -26,11 +26,13 @@ class PageController extends Controller
         return view('pages/aboutus');
     }
 
-    public function lessons()
+    public function lessons(Request $rq)
     {
         $this->data=[];
         $this->lessonModel = new Page;
-        $this->data = $this->lessonModel->getLessons(session()->get('username'));
+        $this->data['lessons'] = $this->lessonModel->getLessons(session()->get('username'),$rq->get('page'));
+        $this->data['curPage'] = $rq->get('page');
+        $this->data['maxPage'] = $this->lessonModel->getMaxPage();
         return view('pages/lessons')->with('data',$this->data);
     }
     /**

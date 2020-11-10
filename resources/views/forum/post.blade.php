@@ -259,7 +259,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
 
         $('#comment_id').val(comment_id);
 
-        $('#comment_name').focus();
+        $('#comment_content').focus();
 
       });
 

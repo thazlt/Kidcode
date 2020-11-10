@@ -1,6 +1,8 @@
 <?php
 include APPROOT . "/resources/views/inc/header.blade.php";
 $colors =['#51c5d6','rgb(238, 108, 75)','rgba(250, 207, 15)'];
+$curPage = $data['curPage'];
+$maxPage = $data['maxPage'];
  ?>
    <!-- Info -->
     <div class="container-fluid">
@@ -10,7 +12,7 @@ $colors =['#51c5d6','rgb(238, 108, 75)','rgba(250, 207, 15)'];
         </div>
       <?php endif; ?>
 
-      <?php foreach ($data as $lesson): ?>
+      <?php foreach ($data['lessons'] as $lesson): ?>
         <div class="course-box" style="background-color: <?php $colorNum = (int)($lesson['LessonID']%3); echo $colors[$colorNum]; ?>;">
           <div class="course-head">
             <h2><?php echo $lesson['LessonName'] ?></h2>
@@ -38,6 +40,26 @@ $colors =['#51c5d6','rgb(238, 108, 75)','rgba(250, 207, 15)'];
           </div>
         </div>
       <?php endforeach; ?>
+      <div class="pagination-area" style="margin-top: 50px; margin-bottom: 50px;">
+          <nav class="navigation pagination" role="navigation">
+              <div class="nav-links">
+                <!-- left arrow -->
+                <?php if ($curPage > 1): ?>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=1" class="page-number"><i class="fas fa-angle-double-left"></i></a>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $curPage-1; ?>" class="page-number"><i class="fas fa-angle-left"></i></a>
+                <?php endif; ?>
+                  <!-- numbers -->
+                  <?php for ($i=1; $i<=$maxPage; $i++): ?>
+                    <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $i; ?>" class="page-number <?php echo $i==$curPage?"current":""; ?>"><?php echo $i; ?></a>
+                  <?php endfor; ?>
+                <!-- right arrow -->
+                <?php if ($curPage!=$maxPage): ?>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $curPage+1; ?>" class="page-number"><i class="fas fa-angle-right"></i></a>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $maxPage; ?>" class="page-number"><i class="fas fa-angle-double-right"></i></a>
+                <?php endif; ?>
+              </div>
+          </nav>
+      </div>
     </div>
     <script type="text/javascript">
     $(document).ready(function(){

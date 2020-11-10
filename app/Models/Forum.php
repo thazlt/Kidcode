@@ -49,12 +49,12 @@ class Forum extends Model
      {
       $output .= '
       <div class="panel panel-default" style="margin-left:'.$marginleft.'px">
-       <div class="panel-heading">By <b>'.$row["comment_sender_name"].'</b> on <i>'.$row["date"].'</i></div>
-       <div class="panel-body">'.$row["comment"].'</div>
-       <div class="panel-footer" align="right"><button type="button" class="btn2 btn-default reply" id="'.$row["comment_id"].'">Reply</button></div>
+       <div class="panel-heading">By <b>'.$row["Username"].'</b> on <i>'.$row["PostTime"].'</i></div>
+       <div class="panel-body">'.$row["Content"].'</div>
+       <div class="panel-footer" align="right"><button type="button" class="btn2 btn-default reply" id="'.$row["CommentID"].'">Reply</button></div>
       </div>
       ';
-      $output .= $this->getReplyComments($row["comment_id"], $marginleft);
+      $output .= $this->getReplyComments($row["CommentID"], $marginleft);
      }
     }
     return $output;

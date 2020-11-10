@@ -8,9 +8,9 @@ include APPROOT . "/resources/views/inc/header.blade.php";
             <h1 class="forum-title">About Us</h1>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row team-info">
-        <div class="col-md-2 mb-3">
+        <div class="col-lg-3">
 
             <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
               <li class="nav-item">
@@ -26,7 +26,7 @@ include APPROOT . "/resources/views/inc/header.blade.php";
 
         </div>
         <!-- /.col-md-4 -->
-        <div class="col-md-10">
+        <div class="col-lg-9">
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
               <h2>Vision</h2>

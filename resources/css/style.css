@@ -1238,6 +1238,10 @@ div#v-pills-tab {
   border-image: linear-gradient(to right, transparent, #7244B8, transparent) 1;
   color: #A16F30;
 }
+
+.progress-bar {
+  background: #aecc51;
+}
  
 
 @media only screen and (max-width: 990px) {

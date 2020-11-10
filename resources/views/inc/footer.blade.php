@@ -6,14 +6,14 @@
                 </div>
                 <div>
                     <h4>INFORMATION</h4>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">CODE CAMPS</a></li>
-                    <li><a href="#">BLOG</a></li>
+                    <li><a href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a></li>
+                    <li><a href="<?php echo URLROOT ?>FAQ/index">FAQ</a></li>
+                    <li><a href="<?php echo URLROOT ?>forum/index">FORUM</a></li>
                 </div>
                 <div>
                     <h4>LEGAL</h4>
-                    <li><a href="#">PRIVACY POLICY</a></li>
-                    <li><a href="#">TERMS OF SERVICE</a></li>
+                    <li><a href="<?php echo URLROOT ?>FAQ/index">PRIVACY POLICY</a></li>
+                    <li><a href="<?php echo URLROOT ?>FAQ/index">TERMS OF SERVICE</a></li>
                 </div>
                 <div>
                     <h4>SUPPORT</h4>

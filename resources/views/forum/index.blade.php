@@ -48,8 +48,8 @@ $maxPage = $data['MaxPage'];
                             <div class="nav-links">
                               <!-- left arrow -->
                               <?php if ($curPage > 1): ?>
-                                <a href="<?php echo URLROOT; ?>forum/index?curpage=1" class="page-number"><i class="fas fa-angle-double-left"></i></a>
-                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage-1; ?>" class="page-number"><i class="fas fa-angle-left"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=1" class="page-number"><i class="fa fa-angle-double-left"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage-1; ?>" class="page-number"><i class="fa fa-angle-left"></i></a>
                               <?php endif; ?>
                                 <!-- numbers -->
                                 <?php for ($i=1; $i<=$maxPage; $i++): ?>
@@ -57,8 +57,8 @@ $maxPage = $data['MaxPage'];
                                 <?php endfor; ?>
                               <!-- right arrow -->
                               <?php if ($curPage!=$maxPage): ?>
-                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fas fa-angle-right"></i></a>
-                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $maxPage; ?>" class="page-number"><i class="fas fa-angle-double-right"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fa fa-angle-right"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $maxPage; ?>" class="page-number"><i class="fa fa-angle-double-right"></i></a>
                               <?php endif; ?>
                             </div>
                         </nav>
@@ -68,7 +68,7 @@ $maxPage = $data['MaxPage'];
                     <aside id="sidebar" class="sidebar">
                       <?php if (session()->get('loggedin')): ?>
                         <a href="<?php echo URLROOT; ?>forum/create_post" class="new_post" style="text-align: center;">
-                            <span class="icon_edit"><i class="fas fa-edit"></i>New Post</span>
+                            <span class="icon_edit"><i class="fa fa-edit"></i>New Post</span>
                         </a>
                       <?php else: ?>
                         <h3><a data-toggle="modal" data-target="#modal-login" style="cursor: pointer; color: #01c5c4cf;">Login</a> or <a data-toggle="modal" data-target="#modal-signup" style="cursor: pointer; color: #01c5c4cf;">Sign up</a> to create a post</h3>
@@ -83,7 +83,7 @@ $maxPage = $data['MaxPage'];
                                         <input type="text" name="search" placeholder="Search post here...">
                                         <button type="submit" class="search_btn">
                                             <span class="icon_search">
-                                                <i class="fas fa-search"></i>
+                                                <i class="fa fa-search"></i>
                                             </span>
                                         </button>
                                     </div>
@@ -98,7 +98,7 @@ $maxPage = $data['MaxPage'];
                                 <ul class="card-content">
                                   <?php foreach ($data['Categories'] as $cat): ?>
                                     <li>
-                                        <a href="<?php echo URLROOT; ?>forum/index?categories=<?php $cat = str_replace('+', '%2B', $cat); echo $cat['Categories']; ?>"><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span><?php $cat = str_replace('%2B', '+', $cat); echo $cat['Categories']; ?>
+                                        <a href="<?php echo URLROOT; ?>forum/index?categories=<?php $cat = str_replace('+', '%2B', $cat); echo $cat['Categories']; ?>"><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span><?php $cat = str_replace('%2B', '+', $cat); echo $cat['Categories']; ?>
                                         <span class="item-count"><?php echo $cat['Num']; ?></span>
                                         </a>
                                     </li>

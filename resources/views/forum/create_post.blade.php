@@ -66,7 +66,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                           CKEDITOR.replace('editor1');
                                         </script>
                                     </div>
-                                    <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fas fa-edit"></i>Create Post</span></button>
+                                    <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Create Post</span></button>
                                 </article>
                               </form>
                             </div>
@@ -85,7 +85,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                         <input type="text" name="search" placeholder="Search post here...">
                                         <button type="submit" class="search_btn">
                                             <span class="icon_search">
-                                                <i class="fas fa-search"></i>
+                                                <i class="fa fa-search"></i>
                                             </span>
                                         </button>
                                     </div>
@@ -99,27 +99,27 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                             <div class="collapsible-content">
                                 <ul class="card-content">
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>HTML
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>HTML
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>CSS
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>CSS
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>PYTHON
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>PYTHON
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>JAVASCRIPT
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>JAVASCRIPT
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>C++
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>C++
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>

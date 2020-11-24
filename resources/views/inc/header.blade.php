@@ -11,7 +11,8 @@
 
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!-- <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>resources/css/style.css">
@@ -22,6 +23,10 @@
     <script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
     <script src="../ckeditor.js"></script>
 
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" data-auto-add-css="false"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/svg-with-js.css" rel="stylesheet" /> -->
     <title>Kid Code</title>
 </head>
 <body>

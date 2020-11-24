@@ -11,6 +11,6 @@
     </div>
   </li>
   <li class="nav-item">
-    <a href="<?php echo URLROOT ?>page/profile" class="nav-link"><i class="far fa-user"></i></a>
+    <a href="<?php echo URLROOT ?>page/profile" class="nav-link"><i class="fa fa-user"></i></a>
   </li>
 </ul>

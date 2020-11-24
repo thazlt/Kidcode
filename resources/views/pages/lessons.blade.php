@@ -45,8 +45,8 @@ $maxPage = $data['maxPage'];
               <div class="nav-links">
                 <!-- left arrow -->
                 <?php if ($curPage > 1): ?>
-                  <a href="<?php echo URLROOT; ?>page/lessons?page=1" class="page-number"><i class="fas fa-angle-double-left"></i></a>
-                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $curPage-1; ?>" class="page-number"><i class="fas fa-angle-left"></i></a>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=1" class="page-number"><i class="fa fa-angle-double-left"></i></a>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $curPage-1; ?>" class="page-number"><i class="fa fa-angle-left"></i></a>
                 <?php endif; ?>
                   <!-- numbers -->
                   <?php for ($i=1; $i<=$maxPage; $i++): ?>
@@ -54,8 +54,8 @@ $maxPage = $data['maxPage'];
                   <?php endfor; ?>
                 <!-- right arrow -->
                 <?php if ($curPage!=$maxPage): ?>
-                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $curPage+1; ?>" class="page-number"><i class="fas fa-angle-right"></i></a>
-                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $maxPage; ?>" class="page-number"><i class="fas fa-angle-double-right"></i></a>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $curPage+1; ?>" class="page-number"><i class="fa fa-angle-right"></i></a>
+                  <a href="<?php echo URLROOT; ?>page/lessons?page=<?php echo $maxPage; ?>" class="page-number"><i class="fa fa-angle-double-right"></i></a>
                 <?php endif; ?>
               </div>
           </nav>

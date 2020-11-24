@@ -28,9 +28,9 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                    <?php $errors=($key['Errors']!==null)?$key['Errors']:100; $score = (int)((100-$errors)/20);?>
                    <?php for ($i=1; $i<=5; $i++){
                      if ($i<=$score) {
-                       echo "<span class='fas fa-star checked'></span>";
+                       echo "<span class='fa fa-star checked'></span>";
                      } else {
-                       echo "<span class='fas fa-star'></span>";
+                       echo "<span class='fa fa-star'></span>";
                      }
                    }
                     ?>

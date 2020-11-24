@@ -19,24 +19,24 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                        <div class="post-meta">
                                            <div class="author">
                                                <p>
-                                                   <i class="fas fa-user"></i>
+                                                   <i class="fa fa-user"></i>
                                                    by
                                                    <a href="" title="author"><?php echo $data['Post']['PostAuthor']; ?></a>
                                                </p>
                                            </div>
                                            <div class="date_time">
                                                <p>
-                                                <i class="fas fa-calendar"></i>
+                                                <i class="fa fa-calendar"></i>
                                                 <?php echo $data['Post']['PostDate']; ?>
                                                </p>
                                            </div>
                                            <div class="comment-view">
                                                <p>
-                                                   <i class="fas fa-eye"></i>
+                                                   <i class="fa fa-eye"></i>
                                                    <?php echo $data['Post']['ViewCount']; ?>
                                                </p>
                                                <p>
-                                                   <i class="fas fa-comments"></i>
+                                                   <i class="fa fa-comments"></i>
                                                    <?php echo $data['CommentsCount']['Num']; ?>
                                                </p>
                                            </div>
@@ -118,7 +118,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                 <div class="col-lg-4">
                     <aside id="sidebar" class="sidebar">
                         <a href="<?php echo URLROOT; ?>forum/create_post" class="new_post" style="text-align: center;">
-                            <span class="icon_edit"><i class="fas fa-edit"></i>New Post</span>
+                            <span class="icon_edit"><i class="fa fa-edit"></i>New Post</span>
                         </a>
                         <div class="content-card">
                             <div class="card-title">
@@ -130,7 +130,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                         <input type="text" name="search" placeholder="Search post here...">
                                         <button type="submit" class="search_btn">
                                             <span class="icon_search">
-                                                <i class="fas fa-search"></i>
+                                                <i class="fa fa-search"></i>
                                             </span>
                                         </button>
                                     </div>
@@ -144,27 +144,27 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                             <div class="collapsible-content">
                                 <ul class="card-content">
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>HTML
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>HTML
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>CSS
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>CSS
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>PYTHON
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>PYTHON
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>JAVASCRIPT
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>JAVASCRIPT
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=""><span class="icon_chevron"><i class="fas fa-chevron-right"></i></span>C++
+                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>C++
                                         <span class="item-count">10</span>
                                         </a>
                                     </li>

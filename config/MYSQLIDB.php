@@ -1,15 +1,20 @@
 <?php
+use Illuminate\Support\Str;
 class MYSQLIDB {
-  private $host = DB_HOST;
-  private $user = DB_USER;
-  private $pw = DB_PASS;
-  public $db = DB_NAME;
+  private $host;
+  private $user;
+  private $pw;
+  public $db;
 
   private $dbh;
   public $stmt;
   private $error;
 
   public function __construct() {
+    $this->host = env('DB_HOST', '127.0.0.1');
+    $this->user = env('DB_USERNAME', 'forge');
+    $this->pw = env('DB_PASSWORD', '');
+    $this->db = env('DB_DATABASE', 'forge');
     $this->dbh = new mysqli($this->host, $this->user, $this->pw, $this->db);
   }
 

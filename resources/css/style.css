@@ -286,8 +286,11 @@ ul.navbar-nav.mx-auto {
     .btn-primary{
       padding: 10px;
       border-radius: 10px;
-      font-size: 3em;
+      font-size: 2em;
       font-weight: bold;
+      background-color: #aecc51;
+      border-color: #aecc51;
+      /* float: left; */
     }
 
     .text-wrapper{
@@ -1240,7 +1243,7 @@ div#v-pills-tab {
 }
 
 .progress-bar {
-  background: #aecc51;
+  background: #51cc51;
 }
  
 
@@ -1279,4 +1282,5 @@ font-size: 10px;
 }
 .progress {
     width: 40%;
+    margin-bottom: 20px;
 }

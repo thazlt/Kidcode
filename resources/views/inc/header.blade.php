@@ -48,6 +48,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT ?>page/teacher">TEACHER</a>
+                </li>
             </ul>
             <!--log in-->
             <?php

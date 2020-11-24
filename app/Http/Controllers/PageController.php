@@ -225,4 +225,7 @@ class PageController extends Controller
     $this->data['progress'] = $progressinfo;
     return view('pages/profile')->with('data',$this->data);
   }
+  public function teacher(){
+    return view('pages/teacher')->with('data',$this->data);
+  }
 }

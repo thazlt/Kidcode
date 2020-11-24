@@ -29,6 +29,7 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('page/logout', [PageController::class, 'logout']);
   Route::post('page/login', [PageController::class, 'login']);
   Route::post('page/register', [PageController::class, 'register']);
+  Route::get('page/teacher', [PageController::class, 'teacher']);
   Route::get('lessons/index/', [LessonsController::class, 'index']);
   Route::get('lessons/exercise/', [LessonsController::class, 'exercise']);
   Route::get('lessons/exercisesubmit/', [LessonsController::class, 'exercisesubmit']);

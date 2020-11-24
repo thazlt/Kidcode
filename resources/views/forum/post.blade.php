@@ -37,7 +37,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                                                </p>
                                                <p>
                                                    <i class="fas fa-comments"></i>
-                                                   <?php echo count($data['Comments']); ?>
+                                                   <?php echo $data['CommentsCount']['Num']; ?>
                                                </p>
                                            </div>
                                        </div>

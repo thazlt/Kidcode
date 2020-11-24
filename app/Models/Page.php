@@ -73,7 +73,7 @@ class Page extends Model
   }
 
   public function getUserType() {
-    return $this->user['U_TYPE'];
+    return $this->user['U_Type'];
   }
   public function getLessons($username, $page){
     $page--;

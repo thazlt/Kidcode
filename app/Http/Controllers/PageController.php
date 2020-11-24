@@ -194,6 +194,8 @@ class PageController extends Controller
           session()->put('loggedin', true);
           //Session::set('username', $this->userModel->getUsername());
           session()->put('username', $this->userModel->getUsername());
+          //check teacher
+          session()->put('u_type', $this->userModel->getUserType());
           echo "<script type='text/javascript'>alert('Login success!!!');</script>";
         } else {
           echo "<script type='text/javascript'>alert('Wrong password!!!');</script>";
@@ -210,6 +212,7 @@ class PageController extends Controller
   public function logout(){
      session(['username' => '']);
      session(['loggedin' => false]);
+     session(['u_type' => '']);
      echo "<script type='text/javascript'>alert('Good bye :*( see you again');</script>";
      return view('pages/index')->with('data',$this->data);
   }

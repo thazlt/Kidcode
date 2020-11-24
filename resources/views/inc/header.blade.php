@@ -48,9 +48,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>
                 </li>
+                <?php
+                  if (session()->get('u_type') == 1):
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/teacher">TEACHER</a>
                 </li>
+                <?php
+              endif;
+                ?>
             </ul>
             <!--log in-->
             <?php

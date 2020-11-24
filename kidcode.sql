@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 09, 2020 at 04:12 AM
+-- Generation Time: Nov 24, 2020 at 08:40 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_sender_name` varchar(40) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`comment_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
@@ -53,7 +53,8 @@ INSERT INTO `comment` (`LessonID`, `comment_id`, `parent_cmt_id`, `comment`, `co
 (0, 25, 0, 'lo', 'lo', '2020-10-31 14:33:53'),
 (1, 27, 0, 'asdasd', 'asdas', '2020-10-31 14:40:41'),
 (2, 28, 0, 'asdasd', 'asdas', '2020-10-31 14:47:19'),
-(0, 29, 0, 'lala', 'thazlt', '2020-10-31 14:53:17');
+(0, 29, 0, 'lala', 'thazlt', '2020-10-31 14:53:17'),
+(0, 30, 29, 'asdas', 'thazlt1810', '2020-11-10 06:42:55');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `forum_comment` (
   `Content` text COLLATE utf8_vietnamese_ci NOT NULL,
   `PostTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`CommentID`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Dumping data for table `forum_comment`
@@ -123,7 +124,15 @@ CREATE TABLE IF NOT EXISTS `forum_comment` (
 INSERT INTO `forum_comment` (`CommentID`, `PostID`, `ParentCommentID`, `Username`, `Content`, `PostTime`) VALUES
 (1, 1, 0, 'thaz', 'hello di', '2020-11-02 09:31:21'),
 (2, 1, 0, 'thazlt', 'hi', '2020-11-02 11:36:20'),
-(16, 4, 0, 'thazlt', '123456', '2020-11-03 14:54:08');
+(22, 1, 0, 'thazlt1810', 'asd', '2020-11-10 06:45:34'),
+(21, 1, 2, 'thazlt1810', 'asda', '2020-11-10 06:45:31'),
+(20, 14, 0, 'thazlt1810', 'sadas', '2020-11-10 06:44:37'),
+(19, 14, 17, 'thazlt1810', 'asdasd', '2020-11-10 06:41:55'),
+(18, 14, 17, 'thazlt1810', 'test', '2020-11-10 06:40:42'),
+(17, 14, 0, 'thazlt1810', 'test', '2020-11-10 06:40:38'),
+(16, 4, 0, 'thazlt', '123456', '2020-11-03 14:54:08'),
+(23, 1, 0, 'thazlt1810', 'tyrty', '2020-11-10 06:47:26'),
+(24, 1, 23, 'thazlt1810', 'asd', '2020-11-10 06:50:16');
 
 -- --------------------------------------------------------
 
@@ -150,17 +159,17 @@ CREATE TABLE IF NOT EXISTS `forum_post` (
 --
 
 INSERT INTO `forum_post` (`PostID`, `PostTitle`, `PostContent`, `Categories`, `Type`, `Public`, `PostAuthor`, `PostDate`, `ViewCount`) VALUES
-(1, 'This is Title Bla bla bla', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!', 'General', 'Question', 1, 'Thaz', '2020-11-02 09:21:59', 1),
+(1, 'This is Title Bla bla bla', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Dolores expedita dolor, eligendi autem molestias aperiam, suscipit a perspiciatis reiciendis, fuga quia! Iure ab eos ipsam maiores praesentium obcaecati quae sapiente!', 'General', 'Question', 1, 'Thaz', '2020-11-02 09:21:59', 30),
 (5, 'test', '<p>asdasd</p>', 'HTML', 'Question', 1, 'thazlt', '2020-11-04 10:52:41', 0),
 (4, 'this is thaz', '<p>thaz is handsome</p>', 'General', 'Question', 1, 'thazlt', '2020-11-03 08:10:00', 0),
 (6, 'asdasd', '<p>asdasd</p>', 'CSS', 'Question', 1, 'thazlt', '2020-11-04 10:52:46', 0),
-(7, 'asdasdasdasf', '<p>adsfasdf</p>', 'PYTHON', 'Question', 1, 'thazlt', '2020-11-04 10:52:52', 0),
+(7, 'asdasdasdasf', '<p>adsfasdf</p>', 'PYTHON', 'Question', 1, 'thazlt', '2020-11-04 10:52:52', 2),
 (8, 'fdasfasdga', '<p>adsgasdg</p>', 'C++', 'Question', 1, 'thazlt', '2020-11-04 10:52:57', 0),
 (9, 'sadgsadg', '<p>adsgasdg</p>', 'HTML', 'Sharing', 1, 'thazlt', '2020-11-04 10:53:03', 0),
 (10, 'asdfasdf', '<p>asdfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:18', 0),
 (11, 'asdfasdfs', '<p>dafasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:22', 0),
-(12, 'asdfasdf', '<p>adsfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:27', 4),
-(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 6);
+(12, 'asdfasdf', '<p>adsfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:27', 6),
+(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 20);
 
 -- --------------------------------------------------------
 
@@ -176,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `ExerciseNum` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   PRIMARY KEY (`LessonID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lesson`
@@ -185,7 +194,8 @@ CREATE TABLE IF NOT EXISTS `lesson` (
 INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`) VALUES
 (0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png'),
 (1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png'),
-(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png');
+(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png'),
+(3, 'Test', 'This is a test lesson', 4, 'advanced.png');
 
 -- --------------------------------------------------------
 
@@ -241,7 +251,9 @@ INSERT INTO `progress` (`username`, `LessonID`, `ExerciseID`, `Errors`, `TimeFin
 ('sam2020', 0, 102, 1, '00:01:51', '2020-03-17 06:44:36'),
 ('Di12345', 0, 101, 7, '00:28:71', '2020-09-11 03:13:26'),
 ('1859015', 0, 101, 0, '00:00:00', '2020-03-18 05:57:59'),
-('thazlt', 0, 202, 0, '00:00:00', '2020-10-24 03:13:29');
+('thazlt', 0, 202, 0, '00:00:00', '2020-10-24 03:13:29'),
+('thazlt', 0, 103, 8, '00:31:94', '2020-11-09 06:48:05'),
+('thazlt', 1, 101, 2, '00:21:60', '2020-11-09 07:34:53');
 
 -- --------------------------------------------------------
 
@@ -315,6 +327,7 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 
 INSERT INTO `userinfo` (`USERNAME`, `H_PASSWORD`, `EMAIL`, `DOB`, `U_Type`) VALUES
 ('thazlt', '$2y$10$N6FeQohNhq35J8TyZLRWAeeAy6JoqSHaNwYpAgGQLTRP/hEpXjR9u', 'thazlt1810@gmail.com', NULL, b'0'),
+('thazlt1810', '$2y$10$rs6/JDIUpVf8TDlCpIliju38rmB.t5iOoL/ejvCgzVQN9nxdanRsC', 'thazlt1810@gmail.com', NULL, b'0'),
 ('thazsensei', '$2y$10$VcbQcGy6lHMdB4Oau68Yzuiw9BwAdtJT30jMrSXt01yg7NORjjvUW', 'thazlt1810@gmail.com', NULL, b'1');
 COMMIT;
 

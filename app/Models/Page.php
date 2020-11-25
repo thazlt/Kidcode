@@ -94,4 +94,6 @@ class Page extends Model
     $result = $this->dbh->single();
     return $result['Count']%3==0?(int)($result['Count']/3):(int)($result['Count']/3) + 1;
   }
+  public function getStudents($teacher){
+  }
 }

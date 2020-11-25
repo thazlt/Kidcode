@@ -29,12 +29,12 @@ include APPROOT . '/resources/views/inc/header.blade.php';
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
               <?php foreach ($data['Lessons'] as $key):?>
-                <div class="card-lesson" style="--background:#5D9CEC; --color:white;">
+                <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
                   <button class="fa fa-comment"></button>
                   <button class="fa fa-share-alt"></button>
-                  <button class="fa fa-trash"></button>
+                  <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>          
                 </div>
                 <div class="container-teacher">
                   <div class="course-head">

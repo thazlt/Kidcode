@@ -107,4 +107,8 @@ class Lesson extends Model
     $this->dbh->run($sql,"s", $params=[$teacher]);
     return $this->dbh->resultSet();
   }
+  public function deleteLesson($lessonID){
+    $sql = "DELETE FROM lesson WHERE LessonID = ?";
+    $this->dbh->run($sql,"i", $params=[$lessonID]);
+  }
 }

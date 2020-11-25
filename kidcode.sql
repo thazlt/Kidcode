@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 24, 2020 at 08:40 AM
+-- Generation Time: Nov 25, 2020 at 07:59 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -169,7 +169,7 @@ INSERT INTO `forum_post` (`PostID`, `PostTitle`, `PostContent`, `Categories`, `T
 (10, 'asdfasdf', '<p>asdfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:18', 0),
 (11, 'asdfasdfs', '<p>dafasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:22', 0),
 (12, 'asdfasdf', '<p>adsfasdf</p>', 'General', 'Question', 1, 'thazlt', '2020-11-04 10:53:27', 6),
-(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 20);
+(14, 'asdasd', '<p>asdasd</p>', 'PYTHON', 'Relax', 1, 'thazlt', '2020-11-04 15:54:53', 27);
 
 -- --------------------------------------------------------
 
@@ -184,6 +184,7 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `LessonDescription` text NOT NULL,
   `ExerciseNum` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
+  `Teacher` varchar(255) NOT NULL,
   PRIMARY KEY (`LessonID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -191,11 +192,11 @@ CREATE TABLE IF NOT EXISTS `lesson` (
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`) VALUES
-(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png'),
-(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png'),
-(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png'),
-(3, 'Test', 'This is a test lesson', 4, 'advanced.png');
+INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`, `Teacher`) VALUES
+(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png', 'thazsensei'),
+(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png', 'thazsensei'),
+(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png', 'thazsensei'),
+(3, 'Test', 'This is a test lesson', 4, 'advanced.png', 'thazsensei');
 
 -- --------------------------------------------------------
 

@@ -151,12 +151,9 @@ class PageController extends Controller
         } else {
           echo "<script type='text/javascript'>alert('Something is wrong with the server. Try again later');</script>";
         }
-      } else {
-        $message = "Something happen: " . $data['username_err'] . $data['password_err'] . $data['confirm_password_err'] . $data['email_err'];
-        echo "<script type='text/javascript'>alert('$message');</script>";
       }
     }
-    return view('pages/index')->with('data',$this->data);
+    return view('pages/index')->with('data',$data);
   }
   // Login method
   public function login(Request $rq) {
@@ -199,16 +196,17 @@ class PageController extends Controller
           session()->put('u_type', $this->userModel->getUserType());
           echo "<script type='text/javascript'>alert('Login success!!!');</script>";
         } else {
-          echo "<script type='text/javascript'>alert('Wrong password!!!');</script>";
+          $data['password_err'] = "Wrong password!";
         }
-      } else {
-        $message = "Something happen: " . $data['username_err'] . $data['password_err'];
-        echo "<script type='text/javascript'>alert('$message');</script>";
-      }
+      } 
+      // else {
+      //   $message = "Something happen: " . $data['username_err'] . $data['password_err'];
+      //   echo "<script type='text/javascript'>alert('$message');</script>";
+      // }
 
     }
     // return the view
-    return view('pages/index')->with('data',$this->data);
+    return view('pages/index')->with('data',$data);
   }
   public function logout(){
      session(['username' => '']);

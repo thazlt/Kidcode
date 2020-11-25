@@ -18,6 +18,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
            <tr>
              <th scope="col">EXERCISES</th>
              <th scope="col">SCORE</th>
+             <th scope="col">Options</th>
            </tr>
          </thead>
          <tbody>
@@ -35,8 +36,13 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                    }
                     ?>
                  </td>
+                 <td>
+                 <button class="fa fa-edit option-btn"></button>
+                 <button class="fa fa-trash option-btn"></button>
+                 </td>
                </tr>
            <?php endforeach; ?>
+
          </tbody>
        </table>
      </div>

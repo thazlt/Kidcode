@@ -28,12 +28,8 @@ include APPROOT . '/resources/views/inc/header.blade.php';
         <div class="col-lg-9">
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
-<<<<<<< HEAD
-              <div class="card-lesson" style="--background:#CC86BB; --color:white;">
-=======
               <?php foreach ($data['Lessons'] as $key):?>
                 <div class="card-lesson" style="--background:#5D9CEC; --color:white;">
->>>>>>> 083edcdcae3cfcd3cf524e87e44c83cc7d0cb1f2
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
                   <button class="fa fa-comment"></button>

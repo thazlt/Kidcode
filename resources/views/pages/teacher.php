@@ -32,7 +32,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                 <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
-                  <button class="fa fa-comment"></button>
+                  <button class="fa fa-edit"></button>
                   <button class="fa fa-share-alt"></button>
                   <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>          
                 </div>
@@ -61,9 +61,62 @@ include APPROOT . '/resources/views/inc/header.blade.php';
 
           <div class="tab-pane fade" id="student" role="tabpanel">
             <h1>My list of students:</h1>
-             
+            <form class="form-inline adding-form">
+              <div class="form-group mb-2">
+                <label for="add" class="sr-only"></label>
+                <input type="text" readonly class="form-control-plaintext" id="add" value="Add your student here :">
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="inputStudentID" class="sr-only">StudentID</label>
+                <input type="StudentID" class="form-control" id="inputStudentID" placeholder="Student ID">
+              </div>
+              <button type="submit" class="btn-add-students btn btn-secondary btn-lg">Add</button>
+            </form>
+            <div class="table-responsive-sm">
+            <table class="content-table table table-bordered">
+            <thead>
+              <tr>
+             <th>No.</th>
+             <th>ID</th>
+             <th>Name</th>
+             <th>Email</th>
+             <th>Lessons</th>
+             </tr>
+             </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>123</td>
+                <td><a href="">abc</a></td>
+                <td>abc@abc</td>
+                <td><a href="">abcd</a> , <a href="">abcd</a><a href="">abcd</a><a href="">abcd</a><a href="">abcd</a></td>
+              </tr>
+              <tr class="active-row">
+                <td>2</td>
+                <td>123</td>
+                <td><a href="">abc</a></td>
+                <td>abc@abc</td>
+                <td><a href="">abcd</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>123</td>
+                <td><a href="">abc</a></td>
+                <td>abc@abc</td>
+                <td><a href="">abcd</a></td>
+              </tr>
+              <tr class="active-row">
+                <td>4</td>
+                <td>123</td>
+                <td><a href="">abc</a></td>
+                <td>abc@abc</td>
+                <td><a href="">abcd</a></td>
+              </tr>
+            </tbody>
+          </table>
           </div>
-
+          </div>
+          
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <h2>Contact</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem blanditiis voluptates vel ipsam? Facilis, earum!</p>

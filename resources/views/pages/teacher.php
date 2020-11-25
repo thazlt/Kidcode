@@ -28,7 +28,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
         <div class="col-lg-9">
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
-              <div class="card-lesson" style="--background:#5D9CEC; --color:white;">
+              <div class="card-lesson" style="--background:#CC86BB; --color:white;">
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
                   <button class="fa fa-comment"></button>
@@ -41,7 +41,34 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                   </div>
                   <div class="course-content">
                     <div>
-                     <img src="" class="img-fluid course-img">
+                     <img src="../resources/img/advanced.png" class="img-fluid course-img">
+                   </div>
+                   <div class="course-info">
+                     <div>
+                       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis sunt</p>
+                     </div>
+                     <div>
+                     <button type="button" class="btn btn-secondary btn-lg" name="button">Start</button>
+                     <button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button>
+                     </div>
+                   </div>
+                  </div>
+                 </div>
+              </div>
+              <div class="card-lesson" style="--background:#8075C7; --color:white;">
+                <div class="multi-button">
+                  <button class="fa fa-heart"></button>
+                  <button class="fa fa-comment"></button>
+                  <button class="fa fa-share-alt"></button>
+                  <button class="fa fa-trash"></button>
+                </div>
+                <div class="container-teacher">
+                  <div class="course-head">
+                    <h2 style="color: white !important;">Name</h2>
+                  </div>
+                  <div class="course-content">
+                    <div>
+                     <img src="../resources/img/advanced.png" class="img-fluid course-img">
                    </div>
                    <div class="course-info">
                      <div>
@@ -68,34 +95,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                   </div>
                   <div class="course-content">
                     <div>
-                     <img src="" class="img-fluid course-img">
-                   </div>
-                   <div class="course-info">
-                     <div>
-                       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis sunt</p>
-                     </div>
-                     <div>
-                     <button type="button" class="btn btn-secondary btn-lg" name="button">Start</button>
-                     <button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button>
-                     </div>
-                   </div>
-                  </div>
-                 </div>
-              </div>
-              <div class="card-lesson" style="--background:#5D9CEC; --color:white;">
-                <div class="multi-button">
-                  <button class="fa fa-heart"></button>
-                  <button class="fa fa-comment"></button>
-                  <button class="fa fa-share-alt"></button>
-                  <button class="fa fa-trash"></button>
-                </div>
-                <div class="container-teacher">
-                  <div class="course-head">
-                    <h2 style="color: white !important;">Name</h2>
-                  </div>
-                  <div class="course-content">
-                    <div>
-                     <img src="" class="img-fluid course-img">
+                     <img src="../resources/img/advanced.png" class="img-fluid course-img">
                    </div>
                    <div class="course-info">
                      <div>

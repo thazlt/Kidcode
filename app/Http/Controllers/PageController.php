@@ -194,6 +194,7 @@ class PageController extends Controller
           session()->put('loggedin', true);
           //Session::set('username', $this->userModel->getUsername());
           session()->put('username', $this->userModel->getUsername());
+          session()->put('userID', $this->userModel->getUserID());
           //check teacher
           session()->put('u_type', $this->userModel->getUserType());
           echo "<script type='text/javascript'>alert('Login success!!!');</script>";

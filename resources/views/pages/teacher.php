@@ -34,7 +34,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                   <button class="fa fa-heart"></button>
                   <button class="fa fa-comment"></button>
                   <button class="fa fa-share-alt"></button>
-                  <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>          
+                  <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>
                 </div>
                 <div class="container-teacher">
                   <div class="course-head">
@@ -61,7 +61,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
 
           <div class="tab-pane fade" id="student" role="tabpanel">
             <h1>My list of students:</h1>
-             
+             <?php var_dump($data['Students']);?>
           </div>
 
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">

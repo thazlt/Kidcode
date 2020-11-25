@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 25, 2020 at 08:05 AM
+-- Generation Time: Nov 25, 2020 at 09:40 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -185,18 +185,19 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `ExerciseNum` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `Teacher` varchar(255) NOT NULL,
+  `color` varchar(7) NOT NULL,
   PRIMARY KEY (`LessonID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`, `Teacher`) VALUES
-(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png', 'thazsensei'),
-(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png', 'thazsensei'),
-(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png', 'thazsensei'),
-(3, 'Test', 'This is a test lesson', 4, 'advanced.png', 'thazsensei');
+INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`, `Teacher`, `color`) VALUES
+(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png', 'thazsensei', '#24c6dc'),
+(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png', 'thazsensei', '#03afe4'),
+(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png', 'thazsensei', '#4f94df'),
+(8, 'TEST', 'TEST LESSON', 5, 'advanced.png', 'thazsensei', '#24c6dc');
 
 -- --------------------------------------------------------
 
@@ -309,27 +310,48 @@ INSERT INTO `quiz_questions` (`QuizID`, `QuesNum`, `Question`, `Ans1`, `Ans2`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `teacher_student`
+--
+
+DROP TABLE IF EXISTS `teacher_student`;
+CREATE TABLE IF NOT EXISTS `teacher_student` (
+  `TeacherID` int(11) NOT NULL,
+  `StudentID` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Dumping data for table `teacher_student`
+--
+
+INSERT INTO `teacher_student` (`TeacherID`, `StudentID`) VALUES
+(3, 1),
+(3, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userinfo`
 --
 
 DROP TABLE IF EXISTS `userinfo`;
 CREATE TABLE IF NOT EXISTS `userinfo` (
+  `UserID` int(11) NOT NULL AUTO_INCREMENT,
   `USERNAME` varchar(255) NOT NULL DEFAULT '',
   `H_PASSWORD` varchar(255) NOT NULL,
   `EMAIL` varchar(255) NOT NULL,
   `DOB` date DEFAULT NULL,
   `U_Type` bit(1) DEFAULT NULL,
-  PRIMARY KEY (`USERNAME`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`UserID`,`USERNAME`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`USERNAME`, `H_PASSWORD`, `EMAIL`, `DOB`, `U_Type`) VALUES
-('thazlt', '$2y$10$N6FeQohNhq35J8TyZLRWAeeAy6JoqSHaNwYpAgGQLTRP/hEpXjR9u', 'thazlt1810@gmail.com', NULL, b'0'),
-('thazlt1810', '$2y$10$rs6/JDIUpVf8TDlCpIliju38rmB.t5iOoL/ejvCgzVQN9nxdanRsC', 'thazlt1810@gmail.com', NULL, b'0'),
-('thazsensei', '$2y$10$VcbQcGy6lHMdB4Oau68Yzuiw9BwAdtJT30jMrSXt01yg7NORjjvUW', 'thazlt1810@gmail.com', NULL, b'1');
+INSERT INTO `userinfo` (`UserID`, `USERNAME`, `H_PASSWORD`, `EMAIL`, `DOB`, `U_Type`) VALUES
+(1, 'thazlt', '$2y$10$N6FeQohNhq35J8TyZLRWAeeAy6JoqSHaNwYpAgGQLTRP/hEpXjR9u', 'thazlt1810@gmail.com', NULL, b'0'),
+(2, 'thazlt1810', '$2y$10$rs6/JDIUpVf8TDlCpIliju38rmB.t5iOoL/ejvCgzVQN9nxdanRsC', 'thazlt1810@gmail.com', NULL, b'0'),
+(3, 'thazsensei', '$2y$10$VcbQcGy6lHMdB4Oau68Yzuiw9BwAdtJT30jMrSXt01yg7NORjjvUW', 'thazlt1810@gmail.com', NULL, b'1');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

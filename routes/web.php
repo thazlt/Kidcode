@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LessonsController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\FAQController;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
     return view('pages/index');
 });
 Route::group(['middleware' => ['web']], function() {
+  //Page Controllers
   Route::get('page', PageController::class);
   Route::get('page/index', [PageController::class, 'index']);
   Route::get('page/lessons', [PageController::class, 'lessons']);
@@ -29,13 +31,16 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('page/logout', [PageController::class, 'logout']);
   Route::post('page/login', [PageController::class, 'login']);
   Route::post('page/register', [PageController::class, 'register']);
-  Route::get('page/teacher', [PageController::class, 'teacher']);
+  //Teacher Controllers
+  Route::get('teacher/index', [TeacherController::class, 'index']);
+  //Lessons Controllers
   Route::get('lessons/index/', [LessonsController::class, 'index']);
   Route::get('lessons/exercise/', [LessonsController::class, 'exercise']);
   Route::get('lessons/exercisesubmit/', [LessonsController::class, 'exercisesubmit']);
   Route::get('lessons/quiz/', [LessonsController::class, 'quiz']);
   Route::post('lesson/add_comment', [LessonsController::class, 'add_comment']);
   Route::get('lesson/fetch_comment', [LessonsController::class, 'fetch_commnent']);
+  //Forum Controllers
   Route::get('forum/index', [ForumController::class, 'index']);
   Route::get('forum/create_post', [ForumController::class, 'create_post']);
   Route::get('forum/post', [ForumController::class, 'post']);

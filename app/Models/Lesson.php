@@ -102,4 +102,9 @@ class Lesson extends Model
     VALUES (?,?,?,?)";
     $this->dbh->run($sql, "issi", $params=[$parent_cmt_id, $comment, $comment_sender_name, $LessonID]);
   }
+  public function getLessonsByTeacher($teacher){
+    $sql = "SELECT * FROM lesson WHERE Teacher = ?";
+    $this->dbh->run($sql,"s", $params=[$teacher]);
+    return $this->dbh->resultSet();
+  }
 }

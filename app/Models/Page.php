@@ -98,7 +98,7 @@ class Page extends Model
     return $result['Count']%3==0?(int)($result['Count']/3):(int)($result['Count']/3) + 1;
   }
   public function getStudents($teacher){
-    $sql = "SELECT UserID, USERNAME FROM teacher_student JOIN userinfo ON teacher_student.StudentID = userinfo.UserID WHERE TeacherID = ?";
+    $sql = "SELECT UserID, USERNAME, EMAIL FROM teacher_student JOIN userinfo ON teacher_student.StudentID = userinfo.UserID WHERE TeacherID = ?";
     $this->dbh->run($sql, "i", $params=[$teacher]);
     $result = $this->dbh->resultSet();
     return $result;

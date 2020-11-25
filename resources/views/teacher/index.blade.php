@@ -1,5 +1,6 @@
 <?php
 include APPROOT . '/resources/views/inc/header.blade.php';
+$i=1;
  ?>
     <div class="banner-faq">
         <div class="container-fluid">
@@ -84,34 +85,15 @@ include APPROOT . '/resources/views/inc/header.blade.php';
              </tr>
              </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>123</td>
-                <td><a href="">abc</a></td>
-                <td>abc@abc</td>
+              <?php foreach($data['Students'] as $key):?>
+                <tr <?php if ($i%2==0) echo "class='active-row'"?>>
+                <td><?php echo $i?></td>
+                <td><?php echo $key['UserID']?></td>
+                <td><a href=""><?php echo $key['USERNAME']?></a></td>
+                <td><?php echo $key['EMAIL']?></td>
                 <td><a href="">abcd</a> , <a href="">abcd</a><a href="">abcd</a><a href="">abcd</a><a href="">abcd</a></td>
               </tr>
-              <tr class="active-row">
-                <td>2</td>
-                <td>123</td>
-                <td><a href="">abc</a></td>
-                <td>abc@abc</td>
-                <td><a href="">abcd</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>123</td>
-                <td><a href="">abc</a></td>
-                <td>abc@abc</td>
-                <td><a href="">abcd</a></td>
-              </tr>
-              <tr class="active-row">
-                <td>4</td>
-                <td>123</td>
-                <td><a href="">abc</a></td>
-                <td>abc@abc</td>
-                <td><a href="">abcd</a></td>
-              </tr>
+              <?php $i++; endforeach;?>
             </tbody>
           </table>
           </div>

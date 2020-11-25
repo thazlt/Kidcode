@@ -17,11 +17,13 @@ class TeacherController extends Controller
     public function index(Request $rq){
         $this->data['Lessons']=$this->lessonModel->getLessonsByTeacher(session()->get('username'));
         $this->data['Students']=$this->pageModel->getStudents(session()->get('userID'));
-        return view('pages/teacher')->with('data',$this->data);
+        return view('teacher/index')->with('data',$this->data);
     }
     public function deleteLesson(Request $rq){
         $this->lessonModel->deleteLesson($rq->get('lessonID'));
         return redirect()->to(URLROOT . "teacher/index");
     }
-
+    public function editLesson(Request $rq){
+        return view('teacher/editlesson')->with('data',$this->data);
+    }
 }

@@ -32,7 +32,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                 <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
-                  <button class="fa fa-edit"></button>
+                  <button class="fa fa-edit" onclick="window.location.href='<?php echo URLROOT . "lessons/index/?lessonID=". $key['LessonID'];?>'"></button>
                   <button class="fa fa-share-alt"></button>
                   <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>
                 </div>

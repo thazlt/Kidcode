@@ -8,6 +8,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
        <p><?php echo $data['Lesson']['LessonDescription'] ?></p>
        <a href="<?php echo URLROOT . "lessons/exercise?lessonID=" . $data['Lesson']['LessonID'] . "&exerciseID=" . $data['Exercise'][0]['ExerciseID'] ?>"><button type="submit" name="button" class="btn btn-danger">Start Now</button></a>
      </div>
+     <button class="fa fa-edit option-btn"></button>
    </div>
  </div>
  <div class="container" id="content">

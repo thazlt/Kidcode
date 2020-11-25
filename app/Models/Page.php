@@ -75,6 +75,9 @@ class Page extends Model
   public function getUserType() {
     return $this->user['U_Type'];
   }
+  public function getUserID() {
+    return $this->user['UserID'];
+  }
   public function getLessons($username, $page){
     $page--;
     $index=($page!==null)?$page*3:0;
@@ -95,5 +98,9 @@ class Page extends Model
     return $result['Count']%3==0?(int)($result['Count']/3):(int)($result['Count']/3) + 1;
   }
   public function getStudents($teacher){
+    $sql = "SELECT UserID, USERNAME FROM teacher_student JOIN userinfo ON teacher_student.StudentID = userinfo.UserID WHERE TeacherID = ?";
+    $this->dbh->run($sql, "i", $params=[$teacher]);
+    $result = $this->dbh->resultSet();
+    return $result;
   }
 }

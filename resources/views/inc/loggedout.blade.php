@@ -25,18 +25,22 @@
                             <div class="form-group">
                                 <label for="uname">User Name</label>
                                 <input type="text" class="form-control uname" name="username"  placeholder="Enter your Username">
+                                <p style='color: red;'><?php echo isset($data['username_err'])? $data['username_err']:'' ;?></p>
                             </div>
                             <div class="form-group">
                                 <label for="pw1">Password</label>
                                 <input type="password" class="form-control pw1" name="password"  placeholder="Enter your password">
+                                <p style='color: red;'><?php echo isset($data['password_err'])? $data['password_err']:'' ;?></p>
                             </div>
                             <div class="form-group">
                                 <label for="uname">Re-Enter Password</label>
                                 <input type="password" class="form-control pw2" name="confirm_password"  placeholder="Renter your Password">
+                                <p style='color: red;'><?php echo isset($data['confirm_password_err'])? $data['confirm_password_err']:'' ;?></p>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control email" name="email"  placeholder="Enter your Email">
+                                <p style='color: red;'><?php echo isset($data['email_err'])? $data['email_err']:'' ;?></p>
                             </div>
                             <div class="form-group">
                               <label for="usertype">You are a?</label>
@@ -70,10 +74,12 @@
                             <div class="form-group">
                                 <label for="Username">Username</label>
                                 <input name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <p style='color: red;'><?php echo isset($data['username_err'])? $data['username_err']:'' ;?></p>
                             </div>
                             <div class="form-group">
                                 <label for="Password">Password</label>
                                 <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                                <p style='color: red;'><?php echo isset($data['password_err'])? $data['password_err']:'' ;?></p>
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-primary" name="submit" type="submit">Log In</button>

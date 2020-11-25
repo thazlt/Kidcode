@@ -34,7 +34,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                   <button class="fa fa-heart"></button>
                   <button class="fa fa-edit"></button>
                   <button class="fa fa-share-alt"></button>
-                  <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>          
+                  <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>
                 </div>
                 <div class="container-teacher">
                   <div class="course-head">

@@ -28,7 +28,12 @@ include APPROOT . '/resources/views/inc/header.blade.php';
         <div class="col-lg-9">
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
+<<<<<<< HEAD
               <div class="card-lesson" style="--background:#CC86BB; --color:white;">
+=======
+              <?php foreach ($data['Lessons'] as $key):?>
+                <div class="card-lesson" style="--background:#5D9CEC; --color:white;">
+>>>>>>> 083edcdcae3cfcd3cf524e87e44c83cc7d0cb1f2
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
                   <button class="fa fa-comment"></button>
@@ -37,17 +42,22 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                 </div>
                 <div class="container-teacher">
                   <div class="course-head">
-                    <h2 style="color: white !important;">Name</h2>
+                    <h2 style="color: white !important;"><?php echo $key['LessonName'];?></h2>
                   </div>
                   <div class="course-content">
                     <div>
+<<<<<<< HEAD
                      <img src="../resources/img/advanced.png" class="img-fluid course-img">
+=======
+                    <img src="<?php echo URLROOT ?>/resources/img/<?php echo $key['logo'] ?>" class="img-fluid course-img">
+>>>>>>> 083edcdcae3cfcd3cf524e87e44c83cc7d0cb1f2
                    </div>
                    <div class="course-info">
                      <div>
-                       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis sunt</p>
+                       <p><?php echo $key['LessonDescription'];?></p>
                      </div>
                      <div>
+<<<<<<< HEAD
                      <button type="button" class="btn btn-secondary btn-lg" name="button">Start</button>
                      <button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button>
                      </div>
@@ -104,11 +114,16 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                      <div>
                      <button type="button" class="btn btn-secondary btn-lg" name="button">Start</button>
                      <button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button>
+=======
+                     <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/index/?lessonID=". $key['LessonID']; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Start</button></a>
+                     <a href="<?php if(session()->get('loggedin'))echo URLROOT . "lessons/quiz/?lessonID=" . $key['LessonID']; else echo '#'; ?>"><button type="button" class="btn btn-secondary btn-lg" name="button">Take Quiz</button></a>
+>>>>>>> 083edcdcae3cfcd3cf524e87e44c83cc7d0cb1f2
                      </div>
                    </div>
                   </div>
                  </div>
               </div>
+              <?php endforeach;?>
             </div>
 
           <div class="tab-pane fade" id="student" role="tabpanel">

@@ -18,7 +18,9 @@ include APPROOT . '/resources/views/inc/header.blade.php';
            <tr>
              <th scope="col">EXERCISES</th>
              <th scope="col">SCORE</th>
+             <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
              <th scope="col">Options</th>
+             <?php endif?>
            </tr>
          </thead>
          <tbody>
@@ -36,10 +38,12 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                    }
                     ?>
                  </td>
+                 <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
                  <td>
                  <button class="fa fa-edit option-btn"></button>
                  <button class="fa fa-trash option-btn"></button>
                  </td>
+                 <?php endif?>
                </tr>
            <?php endforeach; ?>
 

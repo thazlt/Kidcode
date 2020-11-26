@@ -20,7 +20,12 @@ class TeacherController extends Controller
         return view('teacher/index')->with('data',$this->data);
     }
     public function addLesson(Request $rq){
-        $this->lessonModel->addLesson();
+        $LessonName = $rq->input('LessonName');
+        $LessonDescription = '';
+        $Teacher = '';
+        $Categories = '';
+        $Color = '';
+        $this->lessonModel->addLesson($LessonName, $LessonDescription, $Teacher, $Categories, $Color);
         return redirect()->to(URLROOT . "teacher/index");
     }
     public function deleteLesson(Request $rq){

@@ -20,33 +20,61 @@ $i=1;
 
             <div class="col-lg-9" >
             <div class="container-fluid" id="exercise">
-            <form action="<?php echo URLROOT . "teacher/uploadLesson";?>">
-            <input type="hidden" name="PostAuthor" value="<?php echo session()->get('username');?>">
+            <form action="<?php echo URLROOT . "teacher/addlesson";?>" method="post">
+            <?php echo Form::token(); ?>
+            <input type="hidden" name="Teacher" value="<?php echo session()->get('username');?>">
                 <article>
                   <div class="single-post-content">
                     <div class="form-group">
-                      <label for="Title">Exercise Title: </label>
-                        <input type="text" id="title" class="text-field" placeholder="Your exercise title ..." name="PostTitle" autocomplete="off" maxlength="200">
-                    </div>
-                        <label for="Title">Exercise details: </label>
-                        <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
-                            <br>
-                            <textarea name="Content" id="editor1" cols="60" rows="9" class="post-content" placeholder="Enter text here ..."></textarea>
-                              <script>
-                                CKEDITOR.replace('editor1');
-                              </script>
+                      <label for="Title">Title</label>
+                        <input type="text" id="title" class="text-field" placeholder="Your NEW title ..." name="LessonName" autocomplete="off" maxlength="200">
                         </div>
-                        <label for="Title">Code: </label>
-                        <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
-                            <br>
-                            <textarea name="Content" id="editor2" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
-                              <script>
-                                CKEDITOR.replace('editor2');
-                              </script>
+                        <div class="row">
+                          <div class="col-lg">
+                            <div class="form-group">
+                              <label>Categories: </label>
+                                <select name="Categories" id="categories" class="form-control">
+                                  <option value="General">General</option>
+                                  <option value="HTML">HTML</option>
+                                  <option value="CSS">CSS</option>
+                                  <option value="PYTHON">PYTHON</option>
+                                  <option value="JAVASCRIPT">JAVASCRIPT</option>
+                                  <option value="C++">C++</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="col-lg">
+                            <div class="form-group">
+                                <label>Background Color: </label>
+                                <select name="Color" id="sort" class="form-control">
+                                  <option value="#1fa67a" style="background-color:#1fa67a; color:white;">#1fa67a</option>
+                                  <option value="#ee6c4b" style="background-color:#ee6c4b; color:white;">#ee6c4b</option>
+                                  <option value="#facf0f"  style="background-color:#facf0f; color:white;">#facf0f</option>
+                                  <option value="#24c6dc" style="background-color:#24c6dc; color:white;">#24c6dc</option>
+                                  <option value="#03afe4" style="background-color:#03afe4; color:white;">#03afe4</option>
+                                  <option value="#4f94df" style="background-color:#4f94df; color:white;">#4f94df</option>
+                                </select>
+                             </div>
+                          </div>
                         </div>
-                        <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Create Exercise</span></button>
-                 </div>
-                </article>
+                          <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
+                            <br>
+                            <textarea name="LessonDescription" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
+                          </div>
+                          <div class="form-group">
+                              <div class="checkbox">
+                                <label data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                  <input type="checkbox"/>Quiz ?
+                                </label>
+                              </div>
+                            </div>
+                            <div id="collapseOne" aria-expanded="false" class="collapse">
+                              <div class="well">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ut molestias eius, nam neque esse eos modi corrupti harum fugit, hic recusandae praesentium, minima ipsa eligendi architecto at! Culpa, explicabo.</div>
+                            </div>
+                          <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Edit Lesson</span></button>
+                    
+                  </div>
+                  </article>
             </form>
             </div>
             </div>

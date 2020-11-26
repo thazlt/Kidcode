@@ -1396,7 +1396,7 @@ button.option-btn:hover{
 }
 
 /* TEACHER CREATE LESSON */
-#lesson {
+#lesson, #exercise {
   border-style: solid;
   border-radius: 20px;
   border-color: #1fa67a;

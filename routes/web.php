@@ -37,6 +37,7 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('teacher/deletelesson', [TeacherController::class, 'deleteLesson']);
   Route::get('teacher/editlesson', [TeacherController::class, 'editlesson']);
   Route::get('teacher/addexercise', [TeacherController::class, 'addExercise']);
+  Route::post('teacher/commitaddexercise', [TeacherController::class, 'commitAddExercise']);
   Route::get('teacher/editexercise', [TeacherController::class, 'editExercise']);
   Route::get('teacher/deleteexercise', [TeacherController::class, 'deleteExercise']);
   //Lessons Controllers

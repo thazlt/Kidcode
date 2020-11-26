@@ -18,7 +18,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
      <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
       <button class="fa fa-edit option-btn" data-toggle="tooltip" data-placement="top" title="Edit Lesson!" onclick="window.location.href='<?php echo URLROOT . 'teacher/editlesson?lessonID='. $data['Lesson']['LessonID'];?>'"></button>
       <?php endif?>
-      <button class="fa fa-plus option-btn" data-toggle="tooltip" data-placement="top" title="Add Exercise!"></button>
+      <button class="fa fa-plus option-btn" data-toggle="tooltip" data-placement="top" title="Add Exercise!" onclick="window.location.href='<?php echo URLROOT . 'teacher/addexercise?lessonID='. $data['Lesson']['LessonID'];?>'"></button>
    </div>
  </div>
  <div class="container" id="content">

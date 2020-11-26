@@ -54,6 +54,6 @@ class TeacherController extends Controller
         $ExerciseDescription = $rq->input('ExerciseDescription');
         $Code = $rq->input('Code');
         $this->lessonModel->addExercise($LessonID, $ExerciseName, $ExerciseDescription, $Code);
-        return redirect()->to(URLROOT . "teacher/index");
+        return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
     }
 }

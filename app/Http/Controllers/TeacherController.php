@@ -36,9 +36,18 @@ class TeacherController extends Controller
         return view('teacher/editlesson')->with('data',$this->data);
     }
     public function addExercise(Request $rq){
+        $this->data['LessonID'] = $rq->get('lessonID');
         return view('teacher/addexercise')->with('data',$this->data);
     }
     public function editExercise(Request $rq){
         return view('teacher/editexercise')->with('data',$this->data);
+    }
+    public function commitAddExercise(Request $rq){
+        $LessonID = $rq->input('LessonID');
+        $ExerciseName = $rq->input('ExerciseName');
+        $ExerciseDescription = $rq->input('ExerciseDescription');
+        $Code = $rq->input('Code');
+        $this->lessonModel->addExercise($LessonID, $ExerciseName, $ExerciseDescription, $Code);
+        return redirect()->to(URLROOT . "teacher/index");
     }
 }

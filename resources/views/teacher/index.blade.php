@@ -33,7 +33,7 @@ $i=1;
                 <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
                 <div class="multi-button">
                   <button class="fa fa-heart"></button>
-                  <button class="fa fa-edit" onclick="window.location.href='<?php echo URLROOT . "lessons/index/?lessonID=". $key['LessonID'];?>'"></button>
+                  <button class="fa fa-edit" onclick="window.location.href='<?php echo URLROOT . 'lessons/index/?lessonID='. $key['LessonID'];?>'"></button>
                   <button class="fa fa-plus"></button>
                   <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>
                 </div>
@@ -89,9 +89,9 @@ $i=1;
                 <tr <?php if ($i%2==0) echo "class='active-row'"?>>
                 <td><?php echo $i?></td>
                 <td><?php echo $key['UserID']?></td>
-                <td><a href=""><?php echo $key['USERNAME']?></a></td>
+                <td><?php echo $key['USERNAME']?></td>
                 <td><?php echo $key['EMAIL']?></td>
-                <td><a href="">abcd</a> , <a href="">abcd</a><a href="">abcd</a><a href="">abcd</a><a href="">abcd</a></td>
+                <td><?php echo str_replace(",", ", ", $key['Lessons'])?></td>
               </tr>
               <?php $i++; endforeach;?>
             </tbody>
@@ -119,3 +119,4 @@ $i=1;
 <?php
     include APPROOT . "/resources/views/inc/footer.blade.php";
 ?>
+

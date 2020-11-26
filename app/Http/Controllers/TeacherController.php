@@ -26,4 +26,10 @@ class TeacherController extends Controller
     public function editLesson(Request $rq){
         return view('teacher/editlesson')->with('data',$this->data);
     }
+    public function addExercise(Request $rq){
+        return view('teacher/addexercise')->with('data',$this->data);
+    }
+    public function editExercise(Request $rq){
+        return view('teacher/editexercise')->with('data',$this->data);
+    }
 }

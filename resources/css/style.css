@@ -273,6 +273,7 @@ ul.navbar-nav.mx-auto {
       letter-spacing: 2px;
       align-content: center;
       border-radius: 10px;
+      text-align: center;
     }
 
     .timer{

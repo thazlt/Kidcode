@@ -1394,6 +1394,14 @@ button.option-btn:hover{
   color: #4f94df;
   box-shadow: 0 0 1rem -0.25rem #4f94df;
 }
+
+/* TEACHER CREATE LESSON */
+#lesson {
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #1fa67a;
+  box-shadow: 0 0 6px #1fa67a;
+}
 @media only screen and (max-width: 990px) {
   textarea.post-content {
       max-width:100%;

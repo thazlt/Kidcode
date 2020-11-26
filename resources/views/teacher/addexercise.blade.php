@@ -27,7 +27,7 @@ $i=1;
                     <div class="form-group">
                       <label for="Title">Exercise Title: </label>
                         <input type="text" id="title" class="text-field" placeholder="Your exercise title ..." name="PostTitle" autocomplete="off" maxlength="200">
-                        </div>
+                    </div>
                         <label for="Title">Exercise details: </label>
                         <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                             <br>
@@ -45,7 +45,11 @@ $i=1;
                               </script>
                         </div>
                         <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Create Exercise</span></button>
-        </div>
+                 </div>
+                </article>
+            </form>
+            </div>
+            </div>
         </div>
     </div>
 

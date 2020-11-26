@@ -4,7 +4,7 @@ $i=1;
  ?>
     <div class="banner-faq">
         <div class="container-fluid">
-            <h1 class="forum-title">Manage your lessons</h1>
+            <h1 class="forum-title">Edit your Lessons</h1>
             <p>Teachers can be able to edit their own lessons</p>
         </div>
     </div>

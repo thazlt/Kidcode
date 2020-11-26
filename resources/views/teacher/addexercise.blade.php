@@ -4,7 +4,7 @@ $i=1;
  ?>
     <div class="banner-faq">
         <div class="container-fluid">
-            <h1 class="forum-title">Manage your lessons</h1>
+            <h1 class="forum-title">Add more exercise for your Lesson!</h1>
             <p>Teachers can be able to edit their own lessons</p>
         </div>
     </div>
@@ -43,7 +43,11 @@ $i=1;
                             <textarea name="Code" id="editor2" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
                         </div>
                         <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Create Exercise</span></button>
-        </div>
+                 </div>
+                </article>
+            </form>
+            </div>
+            </div>
         </div>
     </div>
 

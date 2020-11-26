@@ -4,7 +4,7 @@ $i=1;
  ?>
     <div class="banner-faq">
         <div class="container-fluid">
-            <h1 class="forum-title">Manage your lessons</h1>
+            <h1 class="forum-title">Manage your Lessons</h1>
             <p>Teachers can be able to edit their own lessons</p>
         </div>
     </div>
@@ -35,7 +35,7 @@ $i=1;
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
               <?php foreach ($data['Lessons'] as $key):?>
-                <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
+              <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
                 <div class="multi-button">
                   <button class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="Add Exercise!" onclick="window.location.href='<?php echo URLROOT . 'teacher/addexercise?lessonID='. $key['LessonID'];?>'"></button>
                   <button class="fa fa-cog" data-toggle="tooltip" data-placement="top" title="Edit Exercise!" onclick="window.location.href='<?php echo URLROOT . 'lessons/index?lessonID='. $key['LessonID'];?>'"></button>
@@ -126,10 +126,10 @@ $i=1;
                                   <option value="JAVASCRIPT">JAVASCRIPT</option>
                                   <option value="C++">C++</option>
                                 </select>
-                              </div>
                             </div>
-                            <div class="col-lg">
-                              <div class="form-group">
+                          </div>
+                          <div class="col-lg">
+                            <div class="form-group">
                                 <label>Background Color: </label>
                                 <select name="Color" id="sort" class="form-control">
                                   <option value="#1fa67a" style="background-color:#1fa67a; color:white;">#1fa67a</option>
@@ -139,9 +139,9 @@ $i=1;
                                   <option value="#03afe4" style="background-color:#03afe4; color:white;">#03afe4</option>
                                   <option value="#4f94df" style="background-color:#4f94df; color:white;">#4f94df</option>
                                 </select>
-                              </div>
-                            </div>
+                             </div>
                           </div>
+                        </div>
                           <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                             <br>
                             <textarea name="LessonDescription" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
@@ -157,14 +157,13 @@ $i=1;
                               <div class="well">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ut molestias eius, nam neque esse eos modi corrupti harum fugit, hic recusandae praesentium, minima ipsa eligendi architecto at! Culpa, explicabo.</div>
                             </div>
                           <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Create Lesson</span></button>
-                          <div class="container"><br/>
-
+                    
                   </div>
-                </article>
+                  </article>
             </form>
           </div>
 
-            </div>
+        </div>
 
 
         </div>

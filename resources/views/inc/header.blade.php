@@ -56,13 +56,14 @@
                 <li class="nav-item">
                     <a class="nav-link teacher-hover" style="color:#facf0f;" href="<?php echo URLROOT ?>teacher/index">TEACHER</a>
                 </li>
+                <?php
+              endif;
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>
                 </li>
                 
-                <?php
-              endif;
-                ?>
+           
             </ul>
             <!--log in-->
             <?php

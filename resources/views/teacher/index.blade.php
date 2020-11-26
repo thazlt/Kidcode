@@ -26,16 +26,21 @@ $i=1;
 
         </div>
         <!-- /.col-md-4 -->
+        <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+        </script>
         <div class="col-lg-9">
           <div class="tab-content container-fluid" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel">
               <?php foreach ($data['Lessons'] as $key):?>
                 <div class="card-lesson" style="--background:<?php echo $key['color'];?>; --color:white;">
                 <div class="multi-button">
-                  <button class="fa fa-heart"></button>
-                  <button class="fa fa-edit" onclick="window.location.href='<?php echo URLROOT . "lessons/index/?lessonID=". $key['LessonID'];?>'"></button>
-                  <button class="fa fa-plus"></button>
-                  <button class="fa fa-trash" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>
+                  <button class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="Add Exercise!"></button>
+                  <button class="fa fa-cog" data-toggle="tooltip" data-placement="top" title="Edit Exercise!" onclick="window.location.href='<?php echo URLROOT . "lessons/index/?lessonID=". $key['LessonID'];?>'"></button>
+                  <button class="fa fa-edit" data-toggle="tooltip" data-placement="right" title="Edit Lesson!"></button>
+                  <button class="fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete Lesson!" onclick="window.location.href='<?php echo URLROOT ?>teacher/deletelesson?lessonID=<?php echo $key['LessonID'];?>'"></button>
                 </div>
                 <div class="container-teacher">
                   <div class="course-head">

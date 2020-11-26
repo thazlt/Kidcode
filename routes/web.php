@@ -35,11 +35,13 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('teacher/index', [TeacherController::class, 'index']);
   Route::post('teacher/addlesson', [TeacherController::class, 'addLesson']);
   Route::get('teacher/deletelesson', [TeacherController::class, 'deleteLesson']);
-  Route::get('teacher/editlesson', [TeacherController::class, 'editlesson']);
+  Route::get('teacher/editlesson', [TeacherController::class, 'editLesson']);
+  Route::post('teacher/commiteditlesson', [TeacherController::class, 'commitEditLesson']);
   Route::get('teacher/addexercise', [TeacherController::class, 'addExercise']);
   Route::post('teacher/commitaddexercise', [TeacherController::class, 'commitAddExercise']);
   Route::get('teacher/editexercise', [TeacherController::class, 'editExercise']);
   Route::get('teacher/deleteexercise', [TeacherController::class, 'deleteExercise']);
+  Route::post('teacher/commiteditexercise', [TeacherController::class, 'commitEditExercise']);
   //Lessons Controllers
   Route::get('lessons/index/', [LessonsController::class, 'index']);
   Route::get('lessons/exercise/', [LessonsController::class, 'exercise']);

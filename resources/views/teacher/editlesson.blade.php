@@ -5,7 +5,7 @@ $i=1;
     <div class="banner-faq">
         <div class="container-fluid">
             <h1 class="forum-title">Edit your Lessons</h1>
-            <p>Teachers can be able to edit their own lessons</p>
+            <p>Teachers are able to edit their own lessons</p>
         </div>
     </div>
     <div class="container">
@@ -20,14 +20,14 @@ $i=1;
 
             <div class="col-lg-9" >
             <div class="container-fluid" id="exercise">
-            <form action="<?php echo URLROOT . "teacher/addlesson";?>" method="post">
+            <form action="<?php echo URLROOT . "teacher/commiteditlesson";?>" method="post">
             <?php echo Form::token(); ?>
-            <input type="hidden" name="Teacher" value="<?php echo session()->get('username');?>">
                 <article>
+                <input type="hidden" name="LessonID" value="<?php echo $data['Lesson']['LessonID']?>">
                   <div class="single-post-content">
                     <div class="form-group">
                       <label for="Title">Title</label>
-                        <input type="text" id="title" class="text-field" placeholder="Your NEW title ..." name="LessonName" autocomplete="off" maxlength="200">
+                        <input type="text" id="title" class="text-field" placeholder="Your NEW title ..." name="LessonName" autocomplete="off" maxlength="200" value="<?php echo $data['Lesson']['LessonName']?>">
                         </div>
                         <div class="row">
                           <div class="col-lg">
@@ -59,7 +59,7 @@ $i=1;
                         </div>
                           <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                             <br>
-                            <textarea name="LessonDescription" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
+                            <textarea name="LessonDescription" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."><?php echo $data['Lesson']['LessonDescription']?></textarea>
                           </div>
                           <div class="form-group">
                               <div class="checkbox">

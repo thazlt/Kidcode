@@ -7,7 +7,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
         });
         </script>
  <div class="container" id="intro">
-   <div class="row justify-content-center" style="background-color: <?php echo $data['headcolor'] ?>;">
+   <div class="row justify-content-center" style="background-color: <?php echo $data['Lesson']['color'] ?>;">
      <div class="col-md-4 text-center">
        <h1 style="color: white"><?php echo $data['Lesson']['LessonName'] ?></h1>
        <p><?php echo $data['Lesson']['LessonDescription'] ?></p>

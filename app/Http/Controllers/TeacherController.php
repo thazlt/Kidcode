@@ -33,7 +33,18 @@ class TeacherController extends Controller
         return redirect()->to(URLROOT . "teacher/index");
     }
     public function editLesson(Request $rq){
+        $LessonID=$rq->get('lessonID');
+        $this->data['Lesson'] = $this->lessonModel->getLesson($LessonID);
         return view('teacher/editlesson')->with('data',$this->data);
+    }
+    public function commitEditLesson(Request $rq){
+        $LessonID = $rq->input('LessonID');
+        $LessonName = $rq->input('LessonName');
+        $LessonDescription = $rq->input('LessonDescription');
+        $Color = $rq->input('Color');
+        $Categories = $rq->input('Categories');
+        $this->lessonModel->updateLesson($LessonID, $LessonName, $LessonDescription, $Categories, $Color);
+        return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
     }
     public function addExercise(Request $rq){
         $this->data['LessonID'] = $rq->get('lessonID');
@@ -46,6 +57,9 @@ class TeacherController extends Controller
         return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
     }
     public function editExercise(Request $rq){
+        $LessonID=$rq->get('lessonID');
+        $ExerciseID=$rq->get('exerciseID');
+        $this->data['Exercise']=$this->lessonModel->getExercise($LessonID, $ExerciseID);
         return view('teacher/editexercise')->with('data',$this->data);
     }
     public function commitAddExercise(Request $rq){
@@ -54,6 +68,15 @@ class TeacherController extends Controller
         $ExerciseDescription = $rq->input('ExerciseDescription');
         $Code = $rq->input('Code');
         $this->lessonModel->addExercise($LessonID, $ExerciseName, $ExerciseDescription, $Code);
+        return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
+    }
+    public function commitEditExercise(Request $rq){
+        $LessonID = $rq->input('LessonID');
+        $ExerciseID = $rq->input('ExerciseID');
+        $ExerciseName = $rq->input('ExerciseName');
+        $ExerciseDescription = $rq->input('ExerciseDescription');
+        $Code = $rq->input('Code');
+        $this->lessonModel->updateExercise($LessonID, $ExerciseID, $ExerciseName, $ExerciseDescription, $Code);
         return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
     }
 }

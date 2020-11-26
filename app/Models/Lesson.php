@@ -119,6 +119,10 @@ class Lesson extends Model
     $sql = "INSERT INTO lesson(LessonName, LessonDescription, Teacher, Categories, color) VALUES (?,?,?,?,?)";
     $this->dbh->run($sql,"sssss", $params=[$LessonName, $LessonDescription, $Teacher, $Categories, $Color]);
   }
+  public function updateLesson($LessonID, $LessonName, $LessonDescription, $Categories, $Color){
+    $sql= "UPDATE lesson SET LessonName = ?, LessonDescription = ?, Categories=?, color = ? WHERE LessonID = ?";
+    $this->dbh->run($sql,"ssssi", $params=[$LessonName, $LessonDescription, $Categories, $Color, $LessonID]);
+  }
   public function addExercise($LessonID, $ExerciseName, $ExerciseDescription, $Code){
     $sql = "INSERT INTO exercise(LessonID, ExerciseName, ExerciseDescription, Code) VALUES (?,?,?,?)";
     return $this->dbh->run($sql,"isss", $params=[$LessonID, $ExerciseName, $ExerciseDescription, $Code]);
@@ -126,5 +130,9 @@ class Lesson extends Model
   public function deleteExercise($LessonID,$ExerciseID){
     $sql = "DELETE FROM exercise WHERE LessonID = ? AND ExerciseID = ?";
     $this->dbh->run($sql,"ii", $params=[$LessonID,$ExerciseID]);
+  }
+  public function updateExercise($LessonID, $ExerciseID, $ExerciseName, $ExerciseDescription, $Code){
+    $sql= "UPDATE exercise SET ExerciseName = ?, ExerciseDescription = ?, Code=? WHERE LessonID = ? AND ExerciseID = ?";
+    $this->dbh->run($sql,"ssssi", $params=[$ExerciseName, $ExerciseDescription, $Code, $LessonID, $ExerciseID]);
   }
 }

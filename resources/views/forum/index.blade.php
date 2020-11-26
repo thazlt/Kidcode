@@ -57,7 +57,7 @@ $maxPage = $data['MaxPage'];
                                 <?php endfor; ?>
                               <!-- right arrow -->
                               <?php if ($curPage!=$maxPage): ?>
-                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fa fa-angle-right"></i></a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fa fa-angle-right"></F<i</a>
                                 <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $maxPage; ?>" class="page-number"><i class="fa fa-angle-double-right"></i></a>
                               <?php endif; ?>
                             </div>

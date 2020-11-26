@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 25, 2020 at 09:40 AM
+-- Generation Time: Nov 26, 2020 at 04:37 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_sender_name` varchar(40) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`comment_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
@@ -65,7 +65,7 @@ INSERT INTO `comment` (`LessonID`, `comment_id`, `parent_cmt_id`, `comment`, `co
 DROP TABLE IF EXISTS `exercise`;
 CREATE TABLE IF NOT EXISTS `exercise` (
   `LessonID` int(11) NOT NULL,
-  `ExerciseID` int(11) NOT NULL,
+  `ExerciseID` int(11) NOT NULL AUTO_INCREMENT,
   `ExerciseName` varchar(255) NOT NULL,
   `ExerciseDescription` text NOT NULL,
   `Code` text NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `exercise` (
 --
 
 INSERT INTO `exercise` (`LessonID`, `ExerciseID`, `ExerciseName`, `ExerciseDescription`, `Code`) VALUES
-(0, 101, 'Say Hello', 'To print a string in Python , just use the print function.', 'print \'Hello world.\''),
+(0, 101, 'Say Hello', '<p>To print a string in Python , just use the print function.</p>', 'print \'Hello world.\''),
 (0, 102, 'Practice with print', 'More practice using print function.', 'print \'I can print text.\''),
 (0, 103, 'Practice with print', 'If you want to print something in new line you can use \\n .', 'print \'Why did the beach cry?\'<br>print \'\\n\'<br>print \'Because the seaweed!\''),
 (0, 201, 'Numbers', 'Python supports two types of numbers - integers and floating point numbers. (It also supports complex numbers, which will not be explained in this tutorial). To define an integer, use the following syntax:', 'myint = 7<br>print(myint)'),
@@ -182,22 +182,22 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `LessonID` int(11) NOT NULL AUTO_INCREMENT,
   `LessonName` varchar(255) NOT NULL,
   `LessonDescription` text NOT NULL,
-  `ExerciseNum` int(11) NOT NULL,
-  `logo` varchar(255) NOT NULL,
+  `ExerciseNum` int(11) NOT NULL DEFAULT '0',
+  `logo` varchar(255) DEFAULT 'advanced.png',
   `Teacher` varchar(255) NOT NULL,
-  `color` varchar(7) NOT NULL,
+  `color` varchar(7) NOT NULL DEFAULT '#24c6dc',
+  `Categories` varchar(200) NOT NULL DEFAULT 'General',
   PRIMARY KEY (`LessonID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`, `Teacher`, `color`) VALUES
-(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png', 'thazsensei', '#24c6dc'),
-(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png', 'thazsensei', '#03afe4'),
-(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png', 'thazsensei', '#4f94df'),
-(8, 'TEST', 'TEST LESSON', 5, 'advanced.png', 'thazsensei', '#24c6dc');
+INSERT INTO `lesson` (`LessonID`, `LessonName`, `LessonDescription`, `ExerciseNum`, `logo`, `Teacher`, `color`, `Categories`) VALUES
+(0, 'Beginner', 'Python is one of many amazing programming languages that helps communicating between humans and computers. In this lesson, we will learn the most basic code of Python.', 8, 'beginner.png', 'thazsensei', '#24c6dc', 'General'),
+(1, 'Intermediate', '\"Turtle\" is a Python feature like a drawing board, which lets us command a turtle to draw all over it! We can use functions like turtle.forward(...) and turtle.right(...) which can move the turtle around.', 9, 'inter.png', 'thazsensei', '#ee6c4b', 'General'),
+(2, 'Advanced', 'In this lesson, you will use the codes you have learned to make even more wonderfull things and enhance your coding skill to max level!!', 5, 'advanced.png', 'thazsensei', '#facf0f', 'General');
 
 -- --------------------------------------------------------
 
@@ -255,7 +255,8 @@ INSERT INTO `progress` (`username`, `LessonID`, `ExerciseID`, `Errors`, `TimeFin
 ('1859015', 0, 101, 0, '00:00:00', '2020-03-18 05:57:59'),
 ('thazlt', 0, 202, 0, '00:00:00', '2020-10-24 03:13:29'),
 ('thazlt', 0, 103, 8, '00:31:94', '2020-11-09 06:48:05'),
-('thazlt', 1, 101, 2, '00:21:60', '2020-11-09 07:34:53');
+('thazlt', 1, 101, 2, '00:21:60', '2020-11-09 07:34:53'),
+('thazsensei', 13, 1, 0, '00:00:35', '2020-11-26 09:08:48');
 
 -- --------------------------------------------------------
 

@@ -35,12 +35,12 @@ $i=0;
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <?php echo $lesson['Progress'] ?>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                <?php $i++;   endif; ?>
+                <?php endif; ?>
               </div>
             </div>
           </div>
         </div>
-      <?php endforeach; ?>
+      <?php  $i++; endforeach; ?>
       <div class="pagination-area" style="margin-top: 50px; margin-bottom: 50px;">
           <nav class="navigation pagination" role="navigation">
               <div class="nav-links">

@@ -23,18 +23,20 @@ $i=1;
 
             <div class="col-lg-9" >
             <div class="container-fluid" id="exercise">
-            <form action="<?php echo URLROOT . "teacher/uploadLesson";?>">
-            <input type="hidden" name="PostAuthor" value="<?php echo session()->get('username');?>">
+            <form action="<?php echo URLROOT . "teacher/commiteditexercise";?>" method="post">
+            <?php echo Form::token(); ?>
+              <input type="hidden" name="LessonID" value="<?php echo $data['Exercise']['LessonID']?>">
+              <input type="hidden" name="ExerciseID" value="<?php echo $data['Exercise']['ExerciseID']?>">
                 <article>
                   <div class="single-post-content">
                     <div class="form-group">
                       <label for="Title">Your NEW Exercise Title: </label>
-                        <input type="text" id="title" class="text-field" placeholder="Your exercise title ..." name="PostTitle" autocomplete="off" maxlength="200">
+                        <input type="text" id="title" class="text-field" placeholder="Your exercise title ..." name="ExerciseName" autocomplete="off" maxlength="200" value="<?php echo $data['Exercise']['ExerciseName']?>">
                     </div>
                         <label for="Title">Your NEW Exercise details: </label>
                         <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                             <br>
-                            <textarea name="Content" id="editor1" cols="60" rows="9" class="post-content" placeholder="Enter text here ..."></textarea>
+                            <textarea name="ExerciseDescription" id="editor1" cols="60" rows="9" class="post-content" placeholder="Enter text here ..."><?php echo $data['Exercise']['ExerciseDescription']?></textarea>
                               <script>
                                 CKEDITOR.replace('editor1');
                               </script>
@@ -42,10 +44,7 @@ $i=1;
                         <label for="Title">Your NEW Code: </label>
                         <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                             <br>
-                            <textarea name="Content" id="editor2" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
-                              <script>
-                                CKEDITOR.replace('editor2');
-                              </script>
+                            <textarea name="Code" id="editor2" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."><?php echo $data['Exercise']['Code']?></textarea>
                         </div>
                         <button class="btn btn-primary button new_post" style="text-align: center; width:100%" type="" name="button"><span class="icon_edit"><i class="fa fa-edit"></i>Update Exercise</span></button>
                  </div>

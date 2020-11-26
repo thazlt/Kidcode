@@ -39,6 +39,12 @@ class TeacherController extends Controller
         $this->data['LessonID'] = $rq->get('lessonID');
         return view('teacher/addexercise')->with('data',$this->data);
     }
+    public function deleteExercise(Request $rq){
+        $LessonID=$rq->get('lessonID');
+        $ExerciseID=$rq->get('exerciseID');
+        $this->lessonModel->deleteExercise($LessonID, $ExerciseID);
+        return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
+    }
     public function editExercise(Request $rq){
         return view('teacher/editexercise')->with('data',$this->data);
     }

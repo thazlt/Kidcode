@@ -46,7 +46,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                  <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
                  <td>
                  <button class="fa fa-edit option-btn" onclick="window.location.href='<?php echo URLROOT ?>teacher/editexercise?lessonID=<?php echo $key['LessonID'];?>&exerciseID=<?php echo $key['ExerciseID']?>'"></button>
-                 <button class="fa fa-trash option-btn" onclick="window.location.href='<?php echo URLROOT ?>teacher/deleteexercise?lessonID=<?php echo $key['LessonID'];?>'"></button>
+                 <button class="fa fa-trash option-btn" onclick="window.location.href='<?php echo URLROOT ?>teacher/deleteexercise?lessonID=<?php echo $key['LessonID'];?>&exerciseID=<?php echo $key['ExerciseID']?>'"></button>
                  </td>
                  <?php endif?>
                </tr>

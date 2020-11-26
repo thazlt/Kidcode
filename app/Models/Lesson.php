@@ -120,12 +120,11 @@ class Lesson extends Model
     $this->dbh->run($sql,"sssss", $params=[$LessonName, $LessonDescription, $Teacher, $Categories, $Color]);
   }
   public function addExercise($LessonID, $ExerciseName, $ExerciseDescription, $Code){
-    echo $LessonID;
-    echo $ExerciseName;
-    echo $ExerciseDescription;
-    echo $Code;
     $sql = "INSERT INTO exercise(LessonID, ExerciseName, ExerciseDescription, Code) VALUES (?,?,?,?)";
-    echo $sql;
     return $this->dbh->run($sql,"isss", $params=[$LessonID, $ExerciseName, $ExerciseDescription, $Code]);
+  }
+  public function deleteExercise($LessonID,$ExerciseID){
+    $sql = "DELETE FROM exercise WHERE LessonID = ? AND ExerciseID = ?";
+    $this->dbh->run($sql,"ii", $params=[$LessonID,$ExerciseID]);
   }
 }

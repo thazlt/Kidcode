@@ -105,14 +105,20 @@ $i=1;
           </div>
           
           <div class="tab-pane fade" id="lesson" role="tabpanel" aria-labelledby="lesson-tab">
-            <form action="<?php echo URLROOT . "teacher/uploadLesson";?>">
-            <input type="hidden" name="PostAuthor" value="<?php echo session()->get('username');?>">
+            <form action="<?php echo URLROOT . "teacher/addlesson";?>" method="post">
+            <?php echo Form::token(); ?>
+            <input type="hidden" name="Teacher" value="<?php echo session()->get('username');?>">
                 <article>
                   <div class="single-post-content">
                     <div class="form-group">
                       <label for="Title">Title</label>
+<<<<<<< HEAD
                         <input type="text" id="title" class="text-field" placeholder="Your title ..." name="PostTitle" autocomplete="off" maxlength="200">
                     </div>
+=======
+                        <input type="text" id="title" class="text-field" placeholder="Your title ..." name="LessonName" autocomplete="off" maxlength="200">
+                        </div>
+>>>>>>> 21224376f118e677e5cd3a7ef66d6c80913fa548
                         <div class="row">
                           <div class="col-lg">
                             <div class="form-group">
@@ -130,7 +136,7 @@ $i=1;
                           <div class="col-lg">
                             <div class="form-group">
                                 <label>Background Color: </label>
-                                <select name="Type" id="sort" class="form-control">
+                                <select name="Color" id="sort" class="form-control">
                                   <option value="#1fa67a" style="background-color:#1fa67a; color:white;">#1fa67a</option>
                                   <option value="#ee6c4b" style="background-color:#ee6c4b; color:white;">#ee6c4b</option>
                                   <option value="#facf0f"  style="background-color:#facf0f; color:white;">#facf0f</option>
@@ -143,10 +149,7 @@ $i=1;
                         </div>
                           <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                             <br>
-                            <textarea name="Content" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
-                              <script>
-                                CKEDITOR.replace('editor1');
-                              </script>
+                            <textarea name="LessonDescription" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
                           </div>
                           <div class="form-group">
                               <div class="checkbox">

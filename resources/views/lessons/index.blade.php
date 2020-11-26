@@ -6,9 +6,13 @@ include APPROOT . '/resources/views/inc/header.blade.php';
      <div class="col-md-4 text-center">
        <h1 style="color: white"><?php echo $data['Lesson']['LessonName'] ?></h1>
        <p><?php echo $data['Lesson']['LessonDescription'] ?></p>
+       <?php if($data['Exercise'] != NULL):?>
        <a href="<?php echo URLROOT . "lessons/exercise?lessonID=" . $data['Lesson']['LessonID'] . "&exerciseID=" . $data['Exercise'][0]['ExerciseID'] ?>"><button type="submit" name="button" class="btn btn-danger">Start Now</button></a>
+        <?php endif;?>
      </div>
-     <button class="fa fa-edit option-btn"></button>
+     <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
+      <button class="fa fa-edit option-btn" onclick="window.location.href='<?php echo URLROOT . 'teacher/editlesson?lessonID='. $data['Lesson']['LessonID'];?>'"></button>
+      <?php endif?>
    </div>
  </div>
  <div class="container" id="content">

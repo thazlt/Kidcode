@@ -3,6 +3,7 @@ include APPROOT . "/resources/views/inc/header.blade.php";
 $colors =['#51c5d6','rgb(238, 108, 75)','rgba(250, 207, 15)'];
 $curPage = $data['curPage'];
 $maxPage = $data['maxPage'];
+$i=0;
  ?>
    <!-- Info -->
     <div class="container-fluid">
@@ -13,7 +14,7 @@ $maxPage = $data['maxPage'];
       <?php endif; ?>
 
       <?php foreach ($data['lessons'] as $lesson): ?>
-        <div class="course-box" style="background-color: <?php $colorNum = (int)($lesson['LessonID']%3); echo $colors[$colorNum]; ?>;">
+        <div class="course-box" style="background-color: <?php echo $colors[$i]; ?>;">
           <div class="course-head">
             <h2><?php echo $lesson['LessonName'] ?></h2>
           </div>
@@ -34,7 +35,7 @@ $maxPage = $data['maxPage'];
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <?php echo $lesson['Progress'] ?>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                <?php endif; ?>
+                <?php $i++;   endif; ?>
               </div>
             </div>
           </div>

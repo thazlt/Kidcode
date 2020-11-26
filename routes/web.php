@@ -33,7 +33,7 @@ Route::group(['middleware' => ['web']], function() {
   Route::post('page/register', [PageController::class, 'register']);
   //Teacher Controllers
   Route::get('teacher/index', [TeacherController::class, 'index']);
-  Route::get('teacher/addlesson', [TeacherController::class, 'addLesson']);
+  Route::post('teacher/addlesson', [TeacherController::class, 'addLesson']);
   Route::get('teacher/deletelesson', [TeacherController::class, 'deleteLesson']);
   Route::get('teacher/editlesson', [TeacherController::class, 'editlesson']);
   Route::get('teacher/addexercise', [TeacherController::class, 'addExercise']);

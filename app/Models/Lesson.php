@@ -112,7 +112,7 @@ class Lesson extends Model
     $this->dbh->run($sql,"i", $params=[$lessonID]);
   }
   public function addLesson($LessonName, $LessonDescription, $Teacher, $Categories, $Color){
-    $sql = "INSERT INTO lesson(LessonName, LessonDescription, Teacher, Categories, color) VALUES (?,?,?,?)";
-    $this->dbh->run($sql,"ssss", $params=[$LessonName, $LessonDescription, $Teacher, $Categories, $Color]);
+    $sql = "INSERT INTO lesson(LessonName, LessonDescription, Teacher, Categories, color) VALUES (?,?,?,?,?)";
+    $this->dbh->run($sql,"sssss", $params=[$LessonName, $LessonDescription, $Teacher, $Categories, $Color]);
   }
 }

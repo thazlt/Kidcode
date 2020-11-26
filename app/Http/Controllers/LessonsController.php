@@ -23,7 +23,7 @@ public function index(Request $rq){
     $this->data['Lesson'] = $lessondata;
     $this->data['Exercise'] = $exercisedata;
     $headcolor=['#7bcedc','rgb(238, 108, 75)','rgba(250, 207, 15)'];
-    $this->data['headcolor'] = $headcolor[intval($rq->get('lessonID'))];
+    $this->data['headcolor'] = $headcolor[intval($rq->get('lessonID'))%3];
     return view('lessons/index')->with('data',$this->data);
   }
 }

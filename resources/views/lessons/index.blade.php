@@ -1,6 +1,11 @@
 <?php
 include APPROOT . '/resources/views/inc/header.blade.php';
  ?>
+<script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+        </script>
  <div class="container" id="intro">
    <div class="row justify-content-center" style="background-color: <?php echo $data['headcolor'] ?>;">
      <div class="col-md-4 text-center">
@@ -11,8 +16,9 @@ include APPROOT . '/resources/views/inc/header.blade.php';
         <?php endif;?>
      </div>
      <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
-      <button class="fa fa-edit option-btn" onclick="window.location.href='<?php echo URLROOT . 'teacher/editlesson?lessonID='. $data['Lesson']['LessonID'];?>'"></button>
+      <button class="fa fa-edit option-btn" data-toggle="tooltip" data-placement="top" title="Edit Lesson!" onclick="window.location.href='<?php echo URLROOT . 'teacher/editlesson?lessonID='. $data['Lesson']['LessonID'];?>'"></button>
       <?php endif?>
+      <button class="fa fa-plus option-btn" data-toggle="tooltip" data-placement="top" title="Add Exercise!"></button>
    </div>
  </div>
  <div class="container" id="content">
@@ -45,8 +51,8 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                  </td>
                  <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
                  <td>
-                 <button class="fa fa-edit option-btn" onclick="window.location.href='<?php echo URLROOT ?>teacher/editexercise?lessonID=<?php echo $key['LessonID'];?>&exerciseID=<?php echo $key['ExerciseID']?>'"></button>
-                 <button class="fa fa-trash option-btn" onclick="window.location.href='<?php echo URLROOT ?>teacher/deleteexercise?lessonID=<?php echo $key['LessonID'];?>'"></button>
+                 <button class="fa fa-edit option-btn" data-toggle="tooltip" data-placement="top" title="Edit Exercise!" onclick="window.location.href='<?php echo URLROOT ?>teacher/editexercise?lessonID=<?php echo $key['LessonID'];?>&exerciseID=<?php echo $key['ExerciseID']?>'"></button>
+                 <button class="fa fa-trash option-btn" data-toggle="tooltip" data-placement="top" title="Delete Exercise!" onclick="window.location.href='<?php echo URLROOT ?>teacher/deleteexercise?lessonID=<?php echo $key['LessonID'];?>'"></button>
                  </td>
                  <?php endif?>
                </tr>

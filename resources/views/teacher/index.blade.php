@@ -112,13 +112,8 @@ $i=1;
                   <div class="single-post-content">
                     <div class="form-group">
                       <label for="Title">Title</label>
-<<<<<<< HEAD
-                        <input type="text" id="title" class="text-field" placeholder="Your title ..." name="PostTitle" autocomplete="off" maxlength="200">
-                    </div>
-=======
                         <input type="text" id="title" class="text-field" placeholder="Your title ..." name="LessonName" autocomplete="off" maxlength="200">
                         </div>
->>>>>>> 21224376f118e677e5cd3a7ef66d6c80913fa548
                         <div class="row">
                           <div class="col-lg">
                             <div class="form-group">

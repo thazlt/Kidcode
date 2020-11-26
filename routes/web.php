@@ -35,6 +35,8 @@ Route::group(['middleware' => ['web']], function() {
   Route::get('teacher/index', [TeacherController::class, 'index']);
   Route::get('teacher/deletelesson', [TeacherController::class, 'deleteLesson']);
   Route::get('teacher/editlesson', [TeacherController::class, 'editlesson']);
+  Route::get('teacher/addexercise', [TeacherController::class, 'addExercise']);
+  Route::get('teacher/editexercise', [TeacherController::class, 'editExercise']);
   //Lessons Controllers
   Route::get('lessons/index/', [LessonsController::class, 'index']);
   Route::get('lessons/exercise/', [LessonsController::class, 'exercise']);

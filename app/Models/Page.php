@@ -98,7 +98,16 @@ class Page extends Model
     return $result['Count']%3==0?(int)($result['Count']/3):(int)($result['Count']/3) + 1;
   }
   public function getStudents($teacher){
-    $sql = "SELECT UserID, USERNAME, EMAIL FROM teacher_student JOIN userinfo ON teacher_student.StudentID = userinfo.UserID WHERE TeacherID = ?";
+    $sql = "SELECT u.UserID, u.USERNAME, u.EMAIL, GROUP_CONCAT(u.LessonName) as Lessons
+    FROM (
+    SELECT DISTINCT UserID, userinfo.USERNAME as USERNAME, EMAIL, LessonName
+    FROM userinfo
+    JOIN progress 
+    on userinfo.USERNAME = progress.username
+    JOIN lesson on progress.LessonID = lesson.LessonID
+    JOIN teacher_student on teacher_student.StudentID = userinfo.UserID
+    WHERE teacher_student.TeacherID = ?) AS u
+    GROUP BY UserID";
     $this->dbh->run($sql, "i", $params=[$teacher]);
     $result = $this->dbh->resultSet();
     return $result;

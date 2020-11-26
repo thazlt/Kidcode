@@ -21,10 +21,10 @@ class TeacherController extends Controller
     }
     public function addLesson(Request $rq){
         $LessonName = $rq->input('LessonName');
-        $LessonDescription = '';
-        $Teacher = '';
-        $Categories = '';
-        $Color = '';
+        $LessonDescription = $rq->input('LessonDescription');
+        $Teacher = $rq->input('Teacher');
+        $Categories = $rq->input('Categories');
+        $Color = $rq->input('Color');
         $this->lessonModel->addLesson($LessonName, $LessonDescription, $Teacher, $Categories, $Color);
         return redirect()->to(URLROOT . "teacher/index");
     }

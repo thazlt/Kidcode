@@ -32,7 +32,6 @@ include APPROOT . '/resources/views/inc/header.blade.php';
             <div class="row">
               <div class="col-lg-6" id="clock">
                 <div class="timer-wrapper">
-                  <i class="fa fa-clock-o"></i>
                   <p class="timer">00:00:00</p>
                 </div>
               </div>

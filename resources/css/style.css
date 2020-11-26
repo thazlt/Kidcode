@@ -25,6 +25,10 @@ table.table {
   display: inline-block !important;
 } */
 
+.nav-item{
+  cursor: pointer;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #01c5c4cf;
 }

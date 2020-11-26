@@ -50,15 +50,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>FAQ/index">FAQ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>
-                </li>
                 <?php
                   if (session()->get('u_type') == 1):
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT ?>teacher/index">TEACHER</a>
+                    <a class="nav-link teacher-hover" style="color:#facf0f;" href="<?php echo URLROOT ?>teacher/index">TEACHER</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT ?>page/aboutus">ABOUT US</a>
+                </li>
+                
                 <?php
               endif;
                 ?>

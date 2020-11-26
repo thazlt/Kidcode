@@ -20,7 +20,7 @@ $i=1;
                 <a class="nav-link" id="student-tab" data-toggle="tab" href="#student" role="tab">My students</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab">Upload lesson</a>
+                <a class="nav-link" id="lesson-tab" data-toggle="tab" href="#lesson" role="tab">Upload lesson</a>
               </li>
             </ul>
 
@@ -104,7 +104,7 @@ $i=1;
           </div>
           </div>
           
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="tab-pane fade" id="lesson" role="tabpanel" aria-labelledby="lesson-tab">
             <form action="<?php echo URLROOT . "teacher/uploadLesson";?>">
             </form>
           </div>

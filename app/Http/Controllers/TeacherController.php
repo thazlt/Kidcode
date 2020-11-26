@@ -19,6 +19,10 @@ class TeacherController extends Controller
         $this->data['Students']=$this->pageModel->getStudents(session()->get('userID'));
         return view('teacher/index')->with('data',$this->data);
     }
+    public function addLesson(Request $rq){
+        $this->lessonModel->addLesson();
+        return redirect()->to(URLROOT . "teacher/index");
+    }
     public function deleteLesson(Request $rq){
         $this->lessonModel->deleteLesson($rq->get('lessonID'));
         return redirect()->to(URLROOT . "teacher/index");

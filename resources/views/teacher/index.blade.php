@@ -106,18 +106,18 @@ $i=1;
           
           <div class="tab-pane fade" id="lesson" role="tabpanel" aria-labelledby="lesson-tab">
             <form action="<?php echo URLROOT . "teacher/uploadLesson";?>">
-            <input type="hidden" name="PostAuthor" value="<?php echo session()->get('username');?>">
+            <input type="hidden" name="Teacher" value="<?php echo session()->get('username');?>">
                                 <article>
                                     <div class="single-post-content">
                                         <div class="form-group">
                                             <label for="Title">Title</label>
-                                            <input type="text" id="title" class="text-field" placeholder="Your title ..." name="PostTitle" autocomplete="off" maxlength="200">
+                                            <input type="text" id="title" class="text-field" placeholder="Your title ..." name="LessonName" autocomplete="off" maxlength="200">
                                         </div>
                                         <div class="row">
                                             <div class="col-lg">
                                                 <div class="form-group">
                                                     <label>Categories: </label>
-                                                    <select name="Categories" id="categories" class="form-control">
+                                                    <select name="Categorie" id="categories" class="form-control">
                                                         <option value="General">General</option>
                                                         <option value="HTML">HTML</option>
                                                         <option value="CSS">CSS</option>
@@ -152,7 +152,7 @@ $i=1;
                                     </div>
                                     <div class="single-post-content" style="padding: 0px 15px; margin-bottom: 0;">
                                         <br>
-                                        <textarea name="Content" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
+                                        <textarea name="LessonDescription" id="editor1" cols="60" rows="13" class="post-content" placeholder="Enter text here ..."></textarea>
                                         <script>
                                           CKEDITOR.replace('editor1');
                                         </script>

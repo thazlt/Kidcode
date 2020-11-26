@@ -111,4 +111,8 @@ class Lesson extends Model
     $sql = "DELETE FROM lesson WHERE LessonID = ?";
     $this->dbh->run($sql,"i", $params=[$lessonID]);
   }
+  public function addLesson($LessonName, $LessonDescription, $Categories, $Color){
+    $sql = "INSERT INTO lesson(LessonName, LessonDescription, Categories, color) VALUES (?,?,?,?)";
+    $this->dbh->run($sql,"ssss", $params=[$LessonName, $LessonDescription, $Categories, $Color]);
+  }
 }

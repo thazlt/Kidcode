@@ -52,7 +52,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
                  <?php if (session()->get('username') == $data['Lesson']['Teacher']):?>
                  <td>
                  <button class="fa fa-edit option-btn" data-toggle="tooltip" data-placement="top" title="Edit Exercise!" onclick="window.location.href='<?php echo URLROOT ?>teacher/editexercise?lessonID=<?php echo $key['LessonID'];?>&exerciseID=<?php echo $key['ExerciseID']?>'"></button>
-                 <button class="fa fa-trash option-btn" data-toggle="tooltip" data-placement="top" title="Delete Exercise!" onclick="window.location.href='<?php echo URLROOT ?>teacher/deleteexercise?lessonID=<?php echo $key['LessonID'];?>'"></button>
+                 <button class="fa fa-trash option-btn" data-toggle="tooltip" data-placement="top" title="Delete Exercise!" onclick="window.location.href='<?php echo URLROOT ?>teacher/deleteexercise?lessonID=<?php echo $key['LessonID'];?>&exerciseID=<?php echo $key['ExerciseID']?>'"></button>
                  </td>
                  <?php endif?>
                </tr>

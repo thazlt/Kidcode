@@ -79,4 +79,10 @@ class TeacherController extends Controller
         $this->lessonModel->updateExercise($LessonID, $ExerciseID, $ExerciseName, $ExerciseDescription, $Code);
         return redirect()->to(URLROOT . "lessons/index?lessonID=$LessonID");
     }
+    public function addStudent(Request $rq){
+        $TeacherID = $rq->input('TeacherID');
+        $StudentID = $rq->input('StudentID');
+        $this->lessonModel->addStudent($TeacherID,$StudentID);
+        return redirect()->to(URLROOT . "teacher/index");
+    }
 }

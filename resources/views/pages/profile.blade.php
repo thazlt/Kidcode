@@ -6,6 +6,7 @@
         <div class="profile-info">
           <div class="profile-info-content">
             <h3><?php echo $data['user']['USERNAME'] ?></h3>
+            <h4>ID: <?php echo $data['user']['UserID'] ?></h4>
             <img class="avatar" src="<?php echo URLROOT ?>/resources/img/defaultava.png" alt="avatar">
             <h3><?php echo $data['user']['EMAIL'] ?></h3>
           </div>

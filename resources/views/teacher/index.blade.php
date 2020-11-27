@@ -67,14 +67,16 @@ $i=1;
 
           <div class="tab-pane fade" id="student" role="tabpanel">
             <h1>My list of students:</h1>
-            <form class="form-inline adding-form">
+            <form class="form-inline adding-form" method = "post" action="<?php echo URLROOT . "teacher/addstudent";?>">
+            <?php echo Form::token(); ?>
               <div class="form-group mb-2">
                 <label for="add" class="sr-only"></label>
-                <input type="text" readonly class="form-control-plaintext" id="add" value="Add your student here :">
+                <input type="hidden" name="TeacherID" value="<?php echo session()->get('userID');?>">
+                <input type="text" readonly class="form-control-plaintext" id="add" placeholder="Add your student here :">
               </div>
               <div class="form-group mx-sm-3 mb-2">
                 <label for="inputStudentID" class="sr-only">StudentID</label>
-                <input type="StudentID" class="form-control" id="inputStudentID" placeholder="Student ID">
+                <input type="text" class="form-control" id="inputStudentID" placeholder="Student ID" name="StudentID">
               </div>
               <button type="submit" class="btn-add-students btn btn-secondary btn-lg">Add</button>
             </form>

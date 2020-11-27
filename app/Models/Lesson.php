@@ -135,4 +135,10 @@ class Lesson extends Model
     $sql= "UPDATE exercise SET ExerciseName = ?, ExerciseDescription = ?, Code=? WHERE LessonID = ? AND ExerciseID = ?";
     $this->dbh->run($sql,"ssssi", $params=[$ExerciseName, $ExerciseDescription, $Code, $LessonID, $ExerciseID]);
   }
+  public function addStudent($TeacherID, $StudentID){
+    $sql="DELETE FROM teacher_student WHERE TeacherID = ? AND StudentID= ?";
+    $this->dbh->run($sql,"ii", $params=[$TeacherID, $StudentID]);
+    $sql="INSERT INTO teacher_student(TeacherID,StudentID) VALUES (?,?)";
+    $this->dbh->run($sql,"ii", $params=[$TeacherID, $StudentID,]);
+  }
 }

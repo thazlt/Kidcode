@@ -25,6 +25,7 @@ class ForumController extends Controller
       $this->data['Post'] = $this->forumModel->getPost($rq->get('PostID'));
       $this->data['Comments'] = $this->forumModel->getComments($rq->get('PostID'));
       $this->data['CommentsCount'] = $this->forumModel->getCommentsCounts($rq->get('PostID'));
+      $this->data['Categories'] = $this->forumModel->getCategories();
       return view('forum/post')->with('data',$this->data);
     }
     public function fetch_commnent(Request $rq){

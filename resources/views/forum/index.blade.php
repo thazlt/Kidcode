@@ -14,7 +14,7 @@ $maxPage = $data['MaxPage'];
                 <div class="col-lg-8">
                     <div class="left">
                         <div class="left-list">
-                          <?php foreach ($data['Post'] as $post) {?>
+                          <?php foreach ($data['Post'] as $post):?>
                             <div class="single">
                                 <div class="single-info">
                                     <a href="<?php echo URLROOT; ?>forum/post?PostID=<?php echo $post['PostID'] ?>" class="info-title"><?php echo $post['PostTitle']; ?></a>
@@ -39,7 +39,7 @@ $maxPage = $data['MaxPage'];
                                     </ul>
                                 </div>
                             </div>
-                          <?php } ?>
+                          <?php endforeach; ?>
                         </div>
                     </div>
 
@@ -51,13 +51,13 @@ $maxPage = $data['MaxPage'];
                                 <a href="<?php echo URLROOT; ?>forum/index?curpage=1" class="page-number"><i class="fa fa-angle-double-left"></i></a>
                                 <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage-1; ?>" class="page-number"><i class="fa fa-angle-left"></i></a>
                               <?php endif; ?>
-                                <!-- numbers -->
-                                <?php for ($i=1; $i<=$maxPage; $i++): ?>
-                                  <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $i; ?>" class="page-number <?php echo $i==$curPage?"current":""; ?>"><?php echo $i; ?></a>
-                                <?php endfor; ?>
+                              <!-- numbers -->
+                              <?php for ($i=1; $i<=$maxPage; $i++): ?>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $i; ?>" class="page-number <?php echo $i==$curPage?"current":""; ?>"><?php echo $i; ?></a>
+                              <?php endfor; ?>
                               <!-- right arrow -->
                               <?php if ($curPage!=$maxPage): ?>
-                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fa fa-angle-right"></F<i</a>
+                                <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $curPage+1; ?>" class="page-number"><i class="fa fa-angle-right"></i></a>
                                 <a href="<?php echo URLROOT; ?>forum/index?curpage=<?php echo $maxPage; ?>" class="page-number"><i class="fa fa-angle-double-right"></i></a>
                               <?php endif; ?>
                             </div>

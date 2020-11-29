@@ -115,64 +115,50 @@ include APPROOT . '/resources/views/inc/header.blade.php';
 
                            </div>
                         </div>
-                <div class="col-lg-4">
-                    <aside id="sidebar" class="sidebar">
-                        <a href="<?php echo URLROOT; ?>forum/create_post" class="new_post" style="text-align: center;">
-                            <span class="icon_edit"><i class="fa fa-edit"></i>New Post</span>
-                        </a>
-                        <div class="content-card">
-                            <div class="card-title">
-                                <h4>Search</h4>
-                            </div>
-                            <div class="card-body">
-                                <form action="" method="get">
-                                    <div class="search">
-                                        <input type="text" name="search" placeholder="Search post here...">
-                                        <button type="submit" class="search_btn">
-                                            <span class="icon_search">
-                                                <i class="fa fa-search"></i>
-                                            </span>
-                                        </button>
+                        <div class="col-lg-4">
+                            <aside id="sidebar" class="sidebar">
+                              <?php if (session()->get('loggedin')): ?>
+                                <a href="<?php echo URLROOT; ?>forum/create_post" class="new_post" style="text-align: center;">
+                                    <span class="icon_edit"><i class="fa fa-edit"></i>New Post</span>
+                                </a>
+                              <?php else: ?>
+                                <h3><a data-toggle="modal" data-target="#modal-login" style="cursor: pointer; color: #01c5c4cf;">Login</a> or <a data-toggle="modal" data-target="#modal-signup" style="cursor: pointer; color: #01c5c4cf;">Sign up</a> to create a post</h3>
+                              <?php endif; ?>
+                                <div class="content-card">
+                                    <div class="card-title forum">
+                                        <h4>Search</h4>
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="card-body">
+                                        <form action="" method="get">
+                                            <div class="search">
+                                                <input type="text" name="search" placeholder="Search post here...">
+                                                <button type="submit" class="search_btn">
+                                                    <span class="icon_search">
+                                                        <i class="fa fa-search"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="forum-categories content-card">
+                                    <div class="card-title forum">
+                                        <h4>Categories</h4>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <ul class="card-content">
+                                          <?php foreach ($data['Categories'] as $cat): ?>
+                                            <li>
+                                                <a href="<?php echo URLROOT; ?>forum/index?categories=<?php $cat = str_replace('+', '%2B', $cat); echo $cat['Categories']; ?>"><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span><?php $cat = str_replace('%2B', '+', $cat); echo $cat['Categories']; ?>
+                                                <span class="item-count"><?php echo $cat['Num']; ?></span>
+                                                </a>
+                                            </li>
+                                          <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </aside>
                         </div>
-                        <div class="forum-categories content-card">
-                            <div class="card-title">
-                                <h4>Categories</h4>
-                            </div>
-                            <div class="collapsible-content">
-                                <ul class="card-content">
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>HTML
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>CSS
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>PYTHON
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>JAVASCRIPT
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="icon_chevron"><i class="fa fa-chevron-right"></i></span>C++
-                                        <span class="item-count">10</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
             </div>
         </div>
     </div>

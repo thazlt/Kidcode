@@ -1,6 +1,6 @@
 <script>
     const quiz = [
-      <?php foreach ($data as $ques) {
+      <?php foreach ($data["Questions"] as $ques) {
         echo "{q:'" . $ques['Question'] . "',";
         echo "option:['" . $ques['Ans1'] . "','" . $ques['Ans2'] . "','" . $ques['Ans3'] . "','" . $ques['Ans4'] . "'],";
         echo "answer:" . $ques['Correct_Ans'] . "},";
@@ -10,7 +10,6 @@
 
 
 <?php
-//var_dump($data);
 include APPROOT . '/resources/views/inc/header.blade.php';
  ?>
 <div class="container-quiz">
@@ -72,7 +71,7 @@ include APPROOT . '/resources/views/inc/header.blade.php';
             </tr>
         </table>
         <button type="button" class="quiz_btn" onclick="tryAgainQuiz()">Try Again</button>
-        <button type="button" class="quiz_btn" onclick="goToHome()">Go to Home</button>
+        <button type="button" class="quiz_btn" onclick="window.location.href='<?php echo URLROOT . 'lessons/index?lessonID='. $data['LessonID'];?>'">Go to Lesson</button>
     </div>
 </div>
     <script src="<?php echo URLROOT; ?>resources/js/quiz.js"></script>
